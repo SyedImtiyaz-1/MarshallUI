@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Menu, Search, X } from "lucide-react";
 
 import logo from "../../assets/logo/logo.png";
+import { Link } from "react-router";
 
 const AnimatedHamburger = ({ isOpen, toggleMenu }) => (
   <button
@@ -25,9 +26,9 @@ const Header = () => {
       {/* Desktop Header */}
       <div className="hidden w-[90%] mx-auto md:flex items-center justify-between px-6 py-4">
         {/* Logo */}
-        <div className="flex-shrink-0">
+        <Link to="/" className="flex-shrink-0">
           <img src={logo} alt="Logo" className="size-14 w-auto" />
-        </div>
+        </Link>
 
         <div className="flex items-center space-x-12">
           {/* Navigation Links */}
