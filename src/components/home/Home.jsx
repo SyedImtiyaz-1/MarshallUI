@@ -2,7 +2,7 @@ import React from "react";
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="mt-20 md:mt-24 min-h-screen bg-white">
       {/* Header Section with Black Background */}
       <section className="bg-black text-white min-h-screen flex items-center">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">

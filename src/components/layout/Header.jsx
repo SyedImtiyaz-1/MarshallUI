@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, Search, X } from "lucide-react";
 
 import logo from "../../assets/logo/logo.png";
@@ -16,15 +16,36 @@ const AnimatedHamburger = ({ isOpen, toggleMenu }) => (
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsScrolled(scrollTop > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Check initial scroll position
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="bg-white border- b border-gray-200 relative">
+    <header
+      className={`fixed z-50 w-full top-0 left-0 bg-white transition-all duration-300 ease-in-out ${
+        isScrolled ? "drop-shadow-lg" : "drop-shadow-none"
+      }`}
+    >
       {/* Desktop Header */}
-      <div className="hidden w-[90%] mx-auto md:flex items-center justify-between px-6 py-4">
+      <div className="hidden  w-[90%] mx-auto md:flex items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link to="/" className="flex-shrink-0">
           <img src={logo} alt="Logo" className="size-14 w-auto" />
@@ -98,7 +119,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed top-0 right-0 w-full h-full bg-white z-50 transform transition-transform duration-300 ease-in-out md:hidden ${
+        className={`fixed top-0 right-0 w-full h-screen bg-white z-50 transform transition-transform duration-300 ease-in-out md:hidden ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >

@@ -131,7 +131,7 @@ const Work = () => {
 
   return (
     <div className="min-h-screen bg-white pb-8">
-      <div className="mt-6 md:mt-10 flex flex-col gap-2">
+      <div className="mt-20 md:mt-24 flex flex-col gap-2">
         <div className="md:px-6">
           <div className="h-[1px] bg-[#DCDCDC] mx-auto md:w-[90%]" />
         </div>

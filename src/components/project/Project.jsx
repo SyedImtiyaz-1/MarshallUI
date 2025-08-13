@@ -66,7 +66,7 @@ const Project = () => {
   */
 
   return (
-    <div className="pb-12 ">
+    <div className="pb-12 mt-20 md:mt-24 ">
       <ProjectComponent projectData={projectData} />
 
       {/* Back to top button */}
