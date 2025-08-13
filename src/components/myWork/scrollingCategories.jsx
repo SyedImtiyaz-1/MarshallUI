@@ -42,20 +42,20 @@ const ScrollingCategories = () => {
 
   return (
     <div className="w-full overflow-hidden bg-white py-8">
-      <div className="flex animate-scroll space-x-8">
+      <div className="flex animate-scroll">
         {/* First set of categories */}
         {categories.map((category, index) => (
           <div
             key={`first-${index}`}
-            className={`flex items-center gap-2 flex-shrink-0 w- 48 h-28 rounded-lg shadow-none hover:shadow-lg transition-shadow duration-300 cursor-pointer relative overflow-hidden group`}
+            className="flex items-center gap-2 flex-shrink-0 sm:w-fit h-20 md:h-24 rounded-lg shadow-none hover:shadow-lg transition-shadow duration-300 cursor-pointer relative overflow-hidden group mr-8"
           >
             <img
               src={category.image}
               alt={category.name}
-              className="w-44 rounded-lg h-full object-cover group-hover:scal e-105 transition-transform duration-300"
+              className="w-32 md:w-36 rounded-lg h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
             <div className="px-2">
-              <h3 className="font-medium text-lg drop-shadow-lg">
+              <h3 className="font-medium text-sm sm:text-lg drop-shadow-lg whitespace-nowrap">
                 {category.name}
               </h3>
             </div>
@@ -65,16 +65,16 @@ const ScrollingCategories = () => {
         {/* Duplicate set for seamless loop */}
         {categories.map((category, index) => (
           <div
-            key={`first-${index}`}
-            className={`flex items-center gap-2 flex-shrink-0 w- 48 h-28 rounded-lg shadow-none hover:shadow-lg transition-shadow duration-300 cursor-pointer relative overflow-hidden group`}
+            key={`second-${index}`}
+            className="flex items-center gap-2 flex-shrink-0 m:w-fit h-20 md:h-24 rounded-lg shadow-none hover:shadow-lg transition-shadow duration-300 cursor-pointer relative overflow-hidden group mr-8"
           >
             <img
               src={category.image}
               alt={category.name}
-              className="w-44 rounded-lg h-full object-cover group-hover:scal e-105 transition-transform duration-300"
+              className="w-32 md:w-36 rounded-lg h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
             <div className="px-2">
-              <h3 className="font-medium text-lg drop-shadow-lg">
+              <h3 className="font-medium text-sm sm:text-lg drop-shadow-lg whitespace-nowrap">
                 {category.name}
               </h3>
             </div>
@@ -88,12 +88,19 @@ const ScrollingCategories = () => {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(-50%);
+            transform: translateX(calc(-100% / 2));
           }
         }
 
         .animate-scroll {
-          animation: scroll 20s linear infinite;
+          animation: scroll 40s linear infinite;
+          width: fit-content;
+        }
+
+        @media (max-width: 640px) {
+          .animate-scroll {
+            animation: scroll 45s linear infinite;
+          }
         }
       `}</style>
     </div>

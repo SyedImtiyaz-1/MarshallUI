@@ -16,6 +16,7 @@ import special from "../../assets/myWork/Projects/Special.png";
 
 import ArrowButton from "./arrowHeading";
 import ScrollingCategories from "./scrollingCategories";
+import { Link } from "react-router";
 
 const Work = () => {
   const projects = [
@@ -129,29 +130,29 @@ const Work = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
-      <div className="mt-10 flex flex-col gap-2">
-        <div className="px-6">
-          <div className="h-[1px] bg-[#DCDCDC] mx-auto w-[90%]" />
+    <div className="min-h-screen bg-white pb-8">
+      <div className="mt-6 md:mt-10 flex flex-col gap-2">
+        <div className="md:px-6">
+          <div className="h-[1px] bg-[#DCDCDC] mx-auto md:w-[90%]" />
         </div>
         <ScrollingCategories />
-        <div className="px-6">
-          <div className="h-[1px] bg-[#DCDCDC] mx-auto w-[90%]" />
+        <div className="md:px-6">
+          <div className="h-[1px] bg-[#DCDCDC] mx-auto md:w-[90%]" />
         </div>
       </div>
-      <div className="mx-auto w-[90%]">
+      <div className="mx-auto md:w-[90%]">
         {/* Header */}
         <div className="px-6 py-8">
-          <div className="flex justify-between items-center">
-            <h1 className="text-6xl font-light text-black">Work</h1>
-            <div className="flex gap-6 text-sm text-gray-600">
+          <div className="flex flex- col md:flex-row gap-2 md:gap-0 justify-between items-center">
+            <h1 className="text-4xl md:text-6xl font-light text-black">Work</h1>
+            <div className="flex gap-2 md:gap-6 text-sm text-gray-600">
               <div className="flex items-center gap-2">
-                <span>View by:</span>
-                <select className="border-none bg-transparent text-gray-800 focus:outline-none hover:text-black transition-colors cursor-pointer">
+                <span className="hidden md:block text-[#202020]">View by:</span>
+                <select className="text-[13px] md:text-base border-none bg-transparent text-[#707070] focus:outline-none hover:text-black transition-colors cursor-pointer">
                   <option>Type of Work</option>
                 </select>
               </div>
-              <select className="border-none bg-transparent text-gray-800 focus:outline-none hover:text-black transition-colors cursor-pointer">
+              <select className="text-[13px] md:text-base border-none bg-transparent text-[#707070] focus:outline-none hover:text-black transition-colors cursor-pointer">
                 <option>Type of Client</option>
               </select>
             </div>
@@ -161,11 +162,12 @@ const Work = () => {
         {/* Top Projects Grid */}
         <div className="grid gird-cols-1 lg:grid-cols-2 gap-6 px-6 pb-8 mx-auto">
           {projects.map((project) => (
-            <div
+            <Link
+              to={`/work/${project.id}`}
               key={project.id}
               className="group cursor-pointer transform transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
             >
-              <div className="rounded-t-lg overflow-hidden h-80 relative group-hover:shadow-inner transition-all duration-300">
+              <div className="rounded-lg md:rounded-none md:rounded-t-lg overflow-hidden h-80 relative group-hover:shadow-inner transition-all duration-300">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <img
                     src={project.image}
@@ -178,35 +180,34 @@ const Work = () => {
                 title={project.title}
                 description={project.description}
               />
-            </div>
+            </Link>
           ))}
         </div>
 
-        {
-          /* Bottom Projects Grid */
-          <div className="grid gird-cols-1 lg:grid-cols-3 gap-6 px-6 pb-8 mx-auto">
-            {bottomProjects.map((project) => (
-              <div
-                key={project.id}
-                className="group cursor-pointer transform transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
-              >
-                <div className="rounded-t-lg overflow-hidden h-80 relative group-hover:shadow-inner transition-all duration-300">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover opacity-100 group-hover:opacity-90 transition-opacity duration-300"
-                    />
-                  </div>{" "}
-                </div>
-                <ArrowButton
-                  title={project.title}
-                  description={project.description}
-                />
+        {/* Bottom Projects Grid */}
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 px-6 pb-8 mx-auto">
+          {bottomProjects.map((project) => (
+            <Link
+              to={`/work/${project.id}`}
+              key={project.id}
+              className="group cursor-pointer transform transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
+            >
+              <div className="rounded-lg md:rounded-none md:rounded-t-lg overflow-hidden h-40 md:h-80 relative group-hover:shadow-inner transition-all duration-300">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover opacity-100 group-hover:opacity-90 transition-opacity duration-300"
+                  />
+                </div>{" "}
               </div>
-            ))}
-          </div>
-        }
+              <ArrowButton
+                title={project.title}
+                description={project.description}
+              />
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );
