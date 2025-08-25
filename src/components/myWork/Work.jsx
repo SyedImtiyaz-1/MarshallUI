@@ -18,7 +18,7 @@ import ArrowButton from "./arrowHeading";
 import ScrollingCategories from "./scrollingCategories";
 import { Link } from "react-router";
 
-const Work = () => {
+const Work = ({ isHome = false }) => {
   const projects = [
     {
       id: 1,
@@ -131,33 +131,41 @@ const Work = () => {
 
   return (
     <div className="min-h-screen bg-white pb-8">
-      <div className="mt-20 md:mt-24 flex flex-col gap-2">
-        <div className="md:px-6">
-          <div className="h-[1px] bg-[#DCDCDC] mx-auto md:w-[90%]" />
-        </div>
-        <ScrollingCategories />
-        <div className="md:px-6">
-          <div className="h-[1px] bg-[#DCDCDC] mx-auto md:w-[90%]" />
-        </div>
-      </div>
-      <div className="mx-auto md:w-[90%]">
-        {/* Header */}
-        <div className="px-6 py-8">
-          <div className="flex flex- col md:flex-row gap-2 md:gap-0 justify-between items-center">
-            <h1 className="text-4xl md:text-6xl font-light text-black">Work</h1>
-            <div className="flex gap-2 md:gap-6 text-sm text-gray-600">
-              <div className="flex items-center gap-2">
-                <span className="hidden md:block text-[#202020]">View by:</span>
-                <select className="text-[13px] md:text-base border-none bg-transparent text-[#707070] focus:outline-none hover:text-black transition-colors cursor-pointer">
-                  <option>Type of Work</option>
-                </select>
-              </div>
-              <select className="text-[13px] md:text-base border-none bg-transparent text-[#707070] focus:outline-none hover:text-black transition-colors cursor-pointer">
-                <option>Type of Client</option>
-              </select>
-            </div>
+      {!isHome && (
+        <div className="mt-20 md:mt-24 flex flex-col gap-2">
+          <div className="md:px-6">
+            <div className="h-[1px] bg-[#DCDCDC] mx-auto md:w-[90%]" />
+          </div>
+          <ScrollingCategories />
+          <div className="md:px-6">
+            <div className="h-[1px] bg-[#DCDCDC] mx-auto md:w-[90%]" />
           </div>
         </div>
+      )}
+      <div className="mx-auto md:w-[90%]">
+        {/* Header */}
+        {!isHome && (
+          <div className="px-6 py-8">
+            <div className="flex flex- col md:flex-row gap-2 md:gap-0 justify-between items-center">
+              <h1 className="text-4xl md:text-6xl font-light text-black">
+                Work
+              </h1>
+              <div className="flex gap-2 md:gap-6 text-sm text-gray-600">
+                <div className="flex items-center gap-2">
+                  <span className="hidden md:block text-[#202020]">
+                    View by:
+                  </span>
+                  <select className="text-[13px] md:text-base border-none bg-transparent text-[#707070] focus:outline-none hover:text-black transition-colors cursor-pointer">
+                    <option>Type of Work</option>
+                  </select>
+                </div>
+                <select className="text-[13px] md:text-base border-none bg-transparent text-[#707070] focus:outline-none hover:text-black transition-colors cursor-pointer">
+                  <option>Type of Client</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Top Projects Grid */}
         <div className="grid gird-cols-1 lg:grid-cols-2 gap-6 px-6 pb-8 mx-auto">
