@@ -19,7 +19,7 @@ import specialLogo from "../../assets/home/brands/special.png";
 import stoneridgeLogo from "../../assets/home/brands/stoneridge.png";
 import trishLogo from "../../assets/home/brands/trish.png";
 import yrLogo from "../../assets/home/brands/y&r.png";
-import Work from "../../components/myWork/Work";
+import Work from "../../pages/work/Work";
 
 const Home = () => {
   const clientLogos = [

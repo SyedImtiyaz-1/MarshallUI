@@ -14,8 +14,8 @@ import humankind from "../../assets/myWork/Projects/Humankind.png";
 import south from "../../assets/myWork/Projects/South.png";
 import special from "../../assets/myWork/Projects/Special.png";
 
-import ArrowButton from "./arrowHeading";
-import ScrollingCategories from "./scrollingCategories";
+import ArrowButton from "../../components/myWork/arrowHeading";
+import ScrollingCategories from "../../components/myWork/scrollingCategories";
 import { Link } from "react-router";
 
 const Work = ({ isHome = false }) => {
