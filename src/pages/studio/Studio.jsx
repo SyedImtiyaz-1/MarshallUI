@@ -56,7 +56,9 @@ const Studio = () => {
   return (
     <div className="mt-24">
       <div className="text-center">
-        <div className="text-[350px] leading-none font-semibold">Est. 2005</div>
+        <div className="text-7xl md:text-[350px] leading-none font-semibold">
+          Est. 2005
+        </div>
         <div className="font-semibold text-2xl mt-8 leading-none">
           Guided by clarity,
           <br />
@@ -64,7 +66,7 @@ const Studio = () => {
         </div>
       </div>
       <div className="mt-18">
-        <div className="text-center text-[#707070]   text-2xl md:text-3xl lg:text-4xl w-[40%] mx-auto">
+        <div className="text-center text-[#707070]   text-2xl md:text-3xl lg:text-4xl px-4 md:px-0  md:w-[40%] mx-auto">
           <h2 className="font-l ight">
             <span className="text-[#202020] italic"> Marshall Haber </span>{" "}
             founded his studio with one goal: to bring{" "}

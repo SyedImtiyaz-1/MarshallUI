@@ -1,8 +1,8 @@
 export default function ArrowButton({ title, description }) {
   return (
     <div className="md:px-4 my-4 flex items-center font-family-helvetica ">
-      <a
-        href="#"
+      <div
+        // href="#"
         className="hidden md:block relative text-black text-2xl no-underline group 
           before:content-[''] before:absolute before:w-0 before:h-px before:bg-black before:left-0 before:top-1/2 
           before:transition-all before:duration-300
@@ -26,7 +26,7 @@ export default function ArrowButton({ title, description }) {
             {description}
           </p>
         </span>
-      </a>
+      </div>
       <div className="md:hidden">
         <h3 className="text-base md:text-xl font-medium text-black  transition-colors">
           {title}
