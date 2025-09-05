@@ -194,19 +194,14 @@ const Clients = () => {
     { name: "Stone Ridge", src: stoneridgeLogo, alt: "Stone Ridge" },
     { name: "Celadon", src: oeladonLogo, alt: "Celadon" },
     { name: "Mizrahi", src: mizrahiLogo, alt: "Mizrahi" },
-    {
-      name: "Hertz Investment Group",
-      src: hertzLogo,
-      alt: "Hertz Investment Group",
-    },
   ];
 
   return (
-    <div className="mt-20 md:mt-[88px] min-h-screen bg-white text-black overflow-x-hidden">
+    <div className="mt-20 md:mt-[88px] min-h-screen bg-white text-black overflow- x-hidden pb-32">
       {/* Header Section */}
       <div className="bg-white text-[#202020] py-16 px-6 mt-4">
         <div className="max-w- 4xl mx-auto text-center">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-light leading-tight">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight">
             We Use Design And Strategy To Empower Our Clients And
             <br /> Create Impactful Results For Their High-Profile And Complex
             <br /> Business Challenges.
@@ -214,8 +209,37 @@ const Clients = () => {
         </div>
       </div>
 
+      <div className="w-[90%] mx-auto mt-4">
+        <div className="text-xl text-[#202020] font-semibold pb-2 border-b border-[#DCDCDC] ">
+          COMPANIES
+        </div>
+        {/* Logo Grid */}
+        <div className="grid gird-cols-2 md:grid-cols-4 gap-6 mb-16 mt-6 border-b border-[#DCDCDC] pb-20">
+          {clientLogos.map((logo, index) => (
+            <div
+              key={index}
+              className="rounded-lg p-6 flex items-center justify-center h-44 hover:bg-gray-200 bg-[#F2F2F2] transition-colors duration-300"
+            >
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                className="max-w-full max-h-full object-contain hover:grayscale-0 transition-all duration-300"
+                onError={(e) => {
+                  // Fallback to text if image fails to load
+                  e.target.style.display = "none";
+                  e.target.nextSibling.style.display = "block";
+                }}
+              />
+              <span className="text-gray-600 text-sm font-medium text-center hidden">
+                {logo.name}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* Carousel Section */}
-      <div className="py-4 w-full max-w-[95vw] 7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="py-4 w-full max-w-[95vw] 7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 ">
         <style jsx>{`
           .slick-slide {
             padding: 0 8px;
@@ -323,35 +347,6 @@ const Clients = () => {
             </div>
           ))}
         </Slider>
-      </div>
-
-      <div className="w-[90%] mx-auto mt-32">
-        <div className="text-xl text-[#202020] font-semibold pb-2 border-b border-[#DCDCDC] ">
-          COMPANIES
-        </div>
-        {/* Logo Grid */}
-        <div className="grid grid-cols-5 gap-6 mb-16 mt-6">
-          {clientLogos.map((logo, index) => (
-            <div
-              key={index}
-              className="rounded-lg p-6 flex items-center justify-center h-44 hover:bg-gray-200 bg-[#F2F2F2] transition-colors duration-300"
-            >
-              <img
-                src={logo.src}
-                alt={logo.alt}
-                className="max-w-full max-h-full object-contain hover:grayscale-0 transition-all duration-300"
-                onError={(e) => {
-                  // Fallback to text if image fails to load
-                  e.target.style.display = "none";
-                  e.target.nextSibling.style.display = "block";
-                }}
-              />
-              <span className="text-gray-600 text-sm font-medium text-center hidden">
-                {logo.name}
-              </span>
-            </div>
-          ))}
-        </div>
       </div>
     </div>
   );

@@ -173,7 +173,7 @@ const Work = ({ isHome = false }) => {
             <Link
               to={`/work/${project.id}`}
               key={project.id}
-              className="group cursor-pointer transform transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
+              className="group cursor-pointer transform transition-all duration-500 hover:scale-[1.02] hover:shadow 2xl"
             >
               <div className="rounded-lg md:rounded-none md:rounded-t-lg overflow-hidden h-80 relative group-hover:shadow-inner transition-all duration-300">
                 <div className="absolute inset-0 flex items-center justify-center">
