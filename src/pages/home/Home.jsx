@@ -61,6 +61,9 @@ const Home = () => {
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
+    window.onbeforeunload = function () {
+      window.scrollTo(0, 0);
+    };
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -119,33 +122,37 @@ const Home = () => {
     <div className="mt-20 md:mt-[88px] min-h-screen bg-white">
       {/* Header Section with Black Background */}
       <section className="bg-black text-white min-h- screen flex items-center py-16">
-        <div className="w-[90%] mx-auto px-6 lg:px-8">
+        <div className="sm:w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="gap-12 items-center">
             {/* Left side - Logo and Main Heading */}
             <div className="space-y-8">
               {/* Main Headline */}
-              <h1 className="text-5xl lg:text-7xl font-light leading-tight">
+              <h1 className="text-2xl sm:text-5xl lg:text-7xl font-light leading-tight">
                 Make your brand so clear, it becomes unforgettable.
               </h1>
             </div>
 
             {/* Right side - Company Description */}
-            <div className="flex mt-12">
-              <div className="w-1/2">
+            <div className="flex flex-col-reverse sm:flex-ro gap-12 sm:gap-0 w mt-12">
+              <div className="w-full sm:w-1/2">
                 {/* Logo */}
-                <img src={heroImage} alt="Hero" className="w-[220px] h-auto" />
+                <img
+                  src={heroImage}
+                  alt="Hero"
+                  className="w-full sm:w-[220px] h-auto mx-auto"
+                />
               </div>
-              <div className="w-1/2 flex gap-4">
-                <div>
-                  <p className="text-lg text-gray-300 leading-relaxed">
+              <div className="w-full sm:w-1/2 flex gap-4">
+                <div className="w-1/2">
+                  <p className="w-full text-sm sm:text-lg text-gray-300 leading-relaxed">
                     Marshall Haber Creative Group is an independent brand
                     consultancy and creative partner to global leaders and
                     ambitious founders.
                   </p>
                 </div>
 
-                <div>
-                  <p className="text-lg text-gray-300 leading-relaxed">
+                <div className="w-1/2">
+                  <p className="w-full text-sm sm:text-lg text-gray-300 leading-relaxed">
                     We help businesses sharpen their positioning, elevate their
                     identity, and build brands built to last.
                   </p>
@@ -171,7 +178,7 @@ const Home = () => {
       <section className="bg- black text- white">
         <div className="w-[90%] mx-auto">
           {/* Logo Grid */}
-          <div className="grid grid-cols-5 gap-6 mb-16">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-16">
             {clientLogos.map((logo, index) => (
               <div
                 key={index}

@@ -132,24 +132,77 @@ const Header = () => {
       {/* Mobile Header */}
       <div className="md:hidden flex items-center justify-between px-6 py-4">
         {/* Logo */}
-        <div className="flex-shrink-0 transform transition-all duration-300 hover:scale-110 hover:-rotate-3">
-          <img
-            src={logoVisible ? logo : bigLogo}
-            alt="Logo"
-            className="size-10 w-auto"
-          />
+        <div className="flex-shrink-0">
+          <img src={logo} alt="Logo" className="size-10 w-auto" />
         </div>
 
         {/* Mobile Icons */}
         <div className="flex items-center space-x-2">
-          <button className="p-2 hover:bg-gradient-to-br from-blue-50 to-purple-50 rounded-full transition-all duration-300 transform hover:scale-125 hover:rotate-12 active:scale-90">
-            <Search
-              size={20}
-              className="text-gray-700 transition-all duration-300 hover:text-blue-600"
-            />
+          <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
+            <Search size={20} className="text-gray-700" />
           </button>
           <AnimatedHamburger isOpen={isMenuOpen} toggleMenu={toggleMenu} />
         </div>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      <div
+        className={`fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300 md:hidden ${
+          isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}
+        onClick={toggleMenu}
+      />
+
+      {/* Mobile Menu */}
+      <div
+        className={`fixed top-0 right-0 w-full h-screen bg-white z-50 transform transition-transform duration-300 ease-in-out md:hidden ${
+          isMenuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        {/* Menu Header */}
+        <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
+          <span className="text-lg font-semibold text-black">Menu</span>
+          <button
+            onClick={toggleMenu}
+            className="p-2 hover:bg-gray-100 rounded- full transition-colors"
+          >
+            <AnimatedHamburger isOpen={isMenuOpen} toggleMenu={toggleMenu} />
+          </button>
+        </div>
+
+        {/* Menu Items */}
+        <nav className="px-6 py-2">
+          <div className="space-y-1">
+            <a
+              href="/work"
+              className="block text-gray-700 hover:text-black hover:bg-gray-50 transition-all py-4 border-b border-[#DCDCDC] text-center roun ded-lg transform hover:translate-x-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Work
+            </a>
+            <a
+              href="/studio"
+              className="block text-gray-700 hover:text-black hover:bg-gray-50 transition-all py-4 border-b border-[#DCDCDC] text-center roun ded-lg transform hover:translate-x-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Studio
+            </a>
+            <a
+              href="/clients"
+              className="block text-gray-700 hover:text-black hover:bg-gray-50 transition-all py-4 border-b border-[#DCDCDC] text-center roun ded-lg transform hover:translate-x-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Clients
+            </a>
+            <a
+              href="/contact"
+              className="block text-gray-700 hover:text-black hover:bg-gray-50 transition-all py-4 border-b border-[#DCDCDC] text-center roun ded-lg transform hover:translate-x-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Contact
+            </a>
+          </div>
+        </nav>
       </div>
     </header>
   );

@@ -88,7 +88,7 @@ const Work = ({ isHome = false }) => {
       bgColor: "bg-green-700",
     },
     {
-      id: 1,
+      id: 5,
       title: "Aaron Matthew SIDS Research Guild",
       category: "Not-For-Profit",
       image: aaron,
@@ -96,7 +96,7 @@ const Work = ({ isHome = false }) => {
       bgColor: "bg-gradient-to-br from-blue-500 to-purple-600",
     },
     {
-      id: 2,
+      id: 6,
       title: "Centerbridge Partners",
       category: "Banking + Finance",
       image: centerbridge,
@@ -104,7 +104,7 @@ const Work = ({ isHome = false }) => {
       bgColor: "bg-gray-200",
     },
     {
-      id: 3,
+      id: 7,
       title: "Coinbase",
       category: "Banking + Finance",
       image: coinbase,
@@ -112,7 +112,7 @@ const Work = ({ isHome = false }) => {
       bgColor: "bg-gradient-to-br from-blue-600 to-indigo-700",
     },
     {
-      id: 4,
+      id: 8,
       title: "Hotel on Rivington",
       category: "Hospitality",
       image: hotel,
@@ -120,7 +120,7 @@ const Work = ({ isHome = false }) => {
       bgColor: "bg-gradient-to-br from-amber-400 to-orange-500",
     },
     {
-      id: 5,
+      id: 9,
       title: "Special Olympics",
       category: "Not-For-Profit",
       image: special,
@@ -128,7 +128,7 @@ const Work = ({ isHome = false }) => {
       bgColor: "bg-gradient-to-br from-blue-800 to-navy-900",
     },
     {
-      id: 6,
+      id: 10,
       title: "South Africa Tourism",
       category: "Civic + Public + Political",
       image: south,
@@ -136,7 +136,7 @@ const Work = ({ isHome = false }) => {
       bgColor: "bg-gradient-to-br from-green-500 to-yellow-600",
     },
     {
-      id: 7,
+      id: 11,
       title: "Boracho Hard Seltzer",
       category: "Consumer",
       image: boracho,
@@ -144,7 +144,7 @@ const Work = ({ isHome = false }) => {
       bgColor: "bg-gradient-to-br from-cyan-400 to-blue-500",
     },
     {
-      id: 8,
+      id: 12,
       title: "Eurotech",
       category: "B2B",
       image: eurotech,
@@ -152,7 +152,7 @@ const Work = ({ isHome = false }) => {
       bgColor: "bg-gradient-to-br from-blue-700 to-indigo-800",
     },
     {
-      id: 9,
+      id: 13,
       title: "Humankind Investments",
       category: "Banking + Finance",
       image: humankind,
@@ -225,7 +225,7 @@ const Work = ({ isHome = false }) => {
         </div> */}
 
         {/* Bottom Projects Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 px-6 pb-8 mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 px-6 pb-8 mx-auto">
           {bottomProjects.map((project) => (
             <Link
               to={`/work/${project.id}`}
