@@ -57,6 +57,38 @@ const Work = ({ isHome = false }) => {
   const bottomProjects = [
     {
       id: 1,
+      title: "MEMRI",
+      category: "Civic + Public + Political",
+      image: memri,
+      description: "TRUTH IS COMPLEX. SPEAK ITS LANGUAGE.",
+      bgColor: "bg-gray-200",
+    },
+    {
+      id: 2,
+      title: "Optifino",
+      category: "Technology",
+      image: optifino,
+      description: "Technology",
+      bgColor: "bg-gradient-to-br from-purple-600 to-blue-600",
+    },
+    {
+      id: 3,
+      title: "The One Toronto",
+      category: "Real Estate",
+      image: toronto,
+      description: "Real Estate",
+      bgColor: "bg-gray-100",
+    },
+    {
+      id: 4,
+      title: "JPMorgan",
+      category: "Financial Services",
+      image: jpMorgan,
+      description: "INTERNATIONAL COUNCIL",
+      bgColor: "bg-green-700",
+    },
+    {
+      id: 1,
       title: "Aaron Matthew SIDS Research Guild",
       category: "Not-For-Profit",
       image: aaron,
@@ -168,12 +200,12 @@ const Work = ({ isHome = false }) => {
         )}
 
         {/* Top Projects Grid */}
-        <div className="grid gird-cols-1 lg:grid-cols-2 gap-6 px-6 pb-8 mx-auto">
+        {/* <div className="grid gird-cols-1 lg:grid-cols-2 gap-6 px-6 pb-8 mx-auto">
           {projects.map((project) => (
             <Link
               to={`/work/${project.id}`}
               key={project.id}
-              className="group cursor-pointer transform transition-all duration-500 hover:scale-[1.02] hover:shadow 2xl"
+              className="group cursor-pointer transform transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
             >
               <div className="rounded-lg md:rounded-none md:rounded-t-lg overflow-hidden h-80 relative group-hover:shadow-inner transition-all duration-300">
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -190,7 +222,7 @@ const Work = ({ isHome = false }) => {
               />
             </Link>
           ))}
-        </div>
+        </div> */}
 
         {/* Bottom Projects Grid */}
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 px-6 pb-8 mx-auto">

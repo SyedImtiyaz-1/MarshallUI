@@ -195,7 +195,7 @@ const Home = () => {
           </div>
 
           {/* Main Text */}
-          <div className="text-center mt-4">
+          <div className="text-center mt-4 font-serif">
             <h2 className="text-[#202020] text-5xl md:text-6xl lg:text-7xl font-light leading- tight mb- 8">
               We work with brands that
             </h2>
@@ -206,7 +206,7 @@ const Home = () => {
           </div>
 
           {/* CTA */}
-          <div className="text-center">
+          <div className="text-center  font-serif">
             <button className="text-[#202020] text-lg hover:text-gray-600 transition-colors duration-300 flex flex-col items-center justify-center mx-auto group">
               See latest projects
               <svg
