@@ -47,7 +47,7 @@ const ScrollingCategories = () => {
         {categories.map((category, index) => (
           <div
             key={`first-${index}`}
-            className="flex items-center gap-2 flex-shrink-0 sm:w-fit h-20 md:h-24 rounded-lg shadow-none hover:shadow-lg transition-shadow duration-300 cursor-pointer relative overflow-hidden group mr-8"
+            className="flex items-center gap-2 flex-shrink-0 sm:w-fit h-20 md:h-24 rounded-lg shadow-none transition-shadow duration-300 cursor-pointer relative overflow-hidden group mr-8"
           >
             <img
               src={category.image}
@@ -55,7 +55,7 @@ const ScrollingCategories = () => {
               className="w-32 md:w-36 rounded-lg h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
             <div className="px-2">
-              <h3 className="font-medium text-sm sm:text-lg drop-shadow-lg whitespace-nowrap">
+              <h3 className="font-medium text-sm sm:text-lg whitespace-nowrap">
                 {category.name}
               </h3>
             </div>
@@ -66,7 +66,7 @@ const ScrollingCategories = () => {
         {categories.map((category, index) => (
           <div
             key={`second-${index}`}
-            className="flex items-center gap-2 flex-shrink-0 m:w-fit h-20 md:h-24 rounded-lg shadow-none hover:shadow-lg transition-shadow duration-300 cursor-pointer relative overflow-hidden group mr-8"
+            className="flex items-center gap-2 flex-shrink-0 m:w-fit h-20 md:h-24 rounded-lg shadow-none transition-shadow duration-300 cursor-pointer relative overflow-hidden group mr-8"
           >
             <img
               src={category.image}
@@ -74,7 +74,7 @@ const ScrollingCategories = () => {
               className="w-32 md:w-36 rounded-lg h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
             <div className="px-2">
-              <h3 className="font-medium text-sm sm:text-lg drop-shadow-lg whitespace-nowrap">
+              <h3 className="font-medium text-sm sm:text-lg whitespace-nowrap">
                 {category.name}
               </h3>
             </div>
