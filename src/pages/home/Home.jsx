@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import heroImage from "../../assets/home/heroImage.png";
+import card1 from "../../assets/home/Card1.png";
+import card2 from "../../assets/home/Card2.png";
+import card3 from "../../assets/home/Card3.png";
 import mock1 from "../../assets/home/mock1.png";
-import mock2 from "../../assets/home/mock2.png";
-import mock3 from "../../assets/home/mock3.png";
 
 import bursonLogo from "../../assets/home/brands/burson.png";
 import centerbridgeLogo from "../../assets/home/brands/centerbridge.png";
@@ -20,6 +21,14 @@ import stoneridgeLogo from "../../assets/home/brands/stoneridge.png";
 import trishLogo from "../../assets/home/brands/trish.png";
 import yrLogo from "../../assets/home/brands/y&r.png";
 import Work from "../../pages/work/Work";
+import SplitText from "../../components/ui/SplitText";
+import CardSwap, { Card } from "../../components/ui/CardSwap";
+import { CodeXml } from "lucide-react";
+import AnimatedContent from "../../components/ui/AnimatedContent";
+import LiquidEther from "../../components/ui/LiquidEther";
+import DarkVeil from "../../components/ui/DarkVeil";
+import Magnet from "../../components/ui/Magnet";
+import TiltedCard from "../../components/ui/TiltedCard";
 
 const Home = () => {
   const clientLogos = [
@@ -121,42 +130,184 @@ const Home = () => {
   return (
     <div className="mt-20 md:mt-[88px] min-h-screen bg-white">
       {/* Header Section with Black Background */}
-      <section className="bg-black text-white min-h- screen flex items-center py-16">
-        <div className="sm:w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
+
+      <section className="bg-black text-white min-h- screen flex items-center pt-24">
+        <div
+          style={{
+            width: "100%",
+            height: "600px",
+            position: "absolute",
+            top: 0,
+          }}
+        >
+          <DarkVeil speed={3} hueShift={214} />
+        </div>
+        <div className="">
           <div className="gap-12 items-center">
             {/* Left side - Logo and Main Heading */}
-            <div className="space-y-8">
+            <div className="space-y-8 sm:w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
               {/* Main Headline */}
-              <h1 className="text-2xl sm:text-5xl lg:text-7xl font-light leading-tight">
+              <SplitText
+                text="Make your brand so clear, it becomes unforgettable."
+                className="text-2xl sm:text-5xl lg:text-7xl font-light leading-tight"
+                delay={100}
+                duration={0.6}
+                ease="power3.out"
+                splitType="words"
+                from={{ opacity: 0, y: 40 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.1}
+                rootMargin="-100px"
+                textAlign="left"
+              />
+              {/* <h1 className="text-2xl sm:text-5xl lg:text-7xl font-light leading-tight">
                 Make your brand so clear, it becomes unforgettable.
-              </h1>
+              </h1> */}
             </div>
 
             {/* Right side - Company Description */}
-            <div className="flex flex-col-reverse sm:flex-ro gap-12 sm:gap-0 w mt-12">
-              <div className="w-full sm:w-1/2">
-                {/* Logo */}
-                <img
-                  src={heroImage}
-                  alt="Hero"
-                  className="w-full sm:w-[220px] h-auto mx-auto"
-                />
-              </div>
-              <div className="w-full sm:w-1/2 flex gap-4">
-                <div className="w-1/2">
-                  <p className="w-full text-sm sm:text-lg text-gray-300 leading-relaxed">
-                    Marshall Haber Creative Group is an independent brand
-                    consultancy and creative partner to global leaders and
-                    ambitious founders.
-                  </p>
+            <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-center lg:items-start relative overflow-hidden">
+              <div className="ml-[5%] px-4 sm:px-6 lg:px-8 w-1/2 flex flex-col-reverse sm:flex-col gap-12 sm:gap-0 w mt-12">
+                <div className="w-full sm:w- 1/2">
+                  <AnimatedContent
+                    distance={150}
+                    direction="horizontal"
+                    reverse={false}
+                    duration={1.2}
+                    // ease="bounce.out"
+                    initialOpacity={0}
+                    animateOpacity
+                    scale={1.1}
+                    threshold={0.2}
+                    delay={0.6}
+                  >
+                    <img
+                      src={heroImage}
+                      alt="Hero"
+                      className="w-full sm:w-[220px] h-auto mx-auto sm:mx-0"
+                    />
+                  </AnimatedContent>
                 </div>
+                <div className="w-full sm:w- 1/2 flex gap-4 mt-12">
+                  <div className="w-1/2">
+                    <AnimatedContent
+                      distance={150}
+                      direction="horizontal"
+                      reverse={false}
+                      duration={1.2}
+                      // ease="bounce.out"
+                      initialOpacity={0}
+                      animateOpacity
+                      scale={1.1}
+                      threshold={0.2}
+                      delay={0.8}
+                    >
+                      <SplitText
+                        text="Marshall Haber Creative Group is an independent brand
+                      consultancy and creative partner to global leaders and
+                      ambitious founders."
+                        className="w-full text-sm sm:text-lg text-gray-300 leading-relaxed"
+                        delay={100}
+                        duration={0.6}
+                        direction={"vertical"}
+                        ease="power3.out"
+                        splitType="lines"
+                        from={{ opacity: 0, y: 40 }}
+                        to={{ opacity: 1, y: 0 }}
+                        threshold={0.1}
+                        rootMargin="-100px"
+                        textAlign="left"
+                      />
+                    </AnimatedContent>
 
-                <div className="w-1/2">
-                  <p className="w-full text-sm sm:text-lg text-gray-300 leading-relaxed">
-                    We help businesses sharpen their positioning, elevate their
-                    identity, and build brands built to last.
-                  </p>
+                    {/* <p className=""></p> */}
+                  </div>
+
+                  <div className="w-1/2">
+                    <AnimatedContent
+                      distance={150}
+                      direction="horizontal"
+                      reverse={false}
+                      duration={1.2}
+                      // ease="bounce.out"
+                      initialOpacity={0}
+                      animateOpacity
+                      scale={1.1}
+                      threshold={0.2}
+                      delay={1}
+                    >
+                      <SplitText
+                        text="We help businesses sharpen their positioning, elevate
+                      their identity, and build brands built to last."
+                        className="w-full text-sm sm:text-lg text-gray-300 leading-relaxed"
+                        delay={100}
+                        duration={0.6}
+                        ease="power3.out"
+                        splitType="lines"
+                        from={{ opacity: 0, y: 40 }}
+                        to={{ opacity: 1, y: 0 }}
+                        threshold={0.1}
+                        rootMargin="-100px"
+                        textAlign="left"
+                      />
+                    </AnimatedContent>
+
+                    {/* <p className="w-full text-sm sm:text-lg text-gray-300 leading-relaxed">
+                      We help businesses sharpen their positioning, elevate
+                      their identity, and build brands built to last.
+                    </p> */}
+                  </div>
                 </div>
+              </div>
+
+              <div
+                style={{
+                  width: "50%",
+                  height: "500px",
+                  position: "relative",
+                  translate: "0px, 10%",
+                }}
+              >
+                <CardSwap
+                  cardDistance={65}
+                  verticalDistance={85}
+                  delay={3500}
+                  pauseOnHover={false}
+                >
+                  <Card>
+                    <h3 className="flex gap-2 items-center ml-2 py-2 font-semibold border-b">
+                      <CodeXml />
+                      Smooth
+                    </h3>
+                    <img
+                      src={card1}
+                      alt="Hero"
+                      className="h-full w-full object-cover"
+                    />
+                  </Card>
+                  <Card>
+                    <h3 className="flex gap-2 items-center ml-2 py-2 font-semibold border-b">
+                      <CodeXml />
+                      Smooth
+                    </h3>
+                    <img
+                      src={card2}
+                      alt="Hero"
+                      className="h-full w-full object-cover"
+                    />
+                  </Card>
+                  <Card>
+                    <h3 className="flex gap-2 items-center ml-2 py-2 font-semibold border-b">
+                      <CodeXml />
+                      Smooth
+                    </h3>
+                    <img
+                      src={card3}
+                      alt="Hero"
+                      className="h-full w-full object-cover"
+                    />
+                  </Card>
+                </CardSwap>
               </div>
             </div>
           </div>
@@ -165,12 +316,46 @@ const Home = () => {
 
       {/* Bottom Message Section */}
       <section className="bg-white py-20">
-        <img src={heroImage} alt="Hero" className="w- [220px] mx-auto" />
+        <div className="flex justify-center">
+          <Magnet padding={50} disabled={false} magnetStrength={10}>
+            <TiltedCard
+              imageSrc={heroImage}
+              altText="Marshall Haber Creative Group"
+              captionText="Marshall Haber Creative Group"
+              containerHeight="400px"
+              containerWidth="800px"
+              imageHeight="400px"
+              imageWidth="800px"
+              rotateAmplitude={12}
+              scaleOnHover={1}
+              showMobileWarning={false}
+              showTooltip={true}
+              displayOverlayContent={true}
+              // overlayContent={
+              //   <img src={heroImage} alt="Hero" className="w- [220px]" />
+              // }
+            />
+          </Magnet>
+        </div>
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <p className="mt-10 text-2xl lg:text-3xl text-[#202020] font-medium">
+          <SplitText
+            text="We empower our clients and deliver uncompromising results backed by
+            personal commitment to their success."
+            className="mt-10 text-2xl lg:text-3xl text-[#202020] font-medium"
+            delay={100}
+            duration={0.6}
+            ease="power3.out"
+            splitType="words"
+            from={{ opacity: 0, y: 40 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="-100px"
+            textAlign="center"
+          />
+          {/* <p className="mt-10 text-2xl lg:text-3xl text-[#202020] font-medium">
             We empower our clients and deliver uncompromising results backed by
             personal commitment to their success.
-          </p>
+          </p> */}
         </div>
       </section>
 
