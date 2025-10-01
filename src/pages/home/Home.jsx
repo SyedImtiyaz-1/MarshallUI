@@ -4,6 +4,22 @@ import card1 from "../../assets/home/Card1.png";
 import card2 from "../../assets/home/Card2.png";
 import card3 from "../../assets/home/Card3.png";
 import mock1 from "../../assets/home/mock1.png";
+import mock2 from "../../assets/home/mock2.png";
+import mock3 from "../../assets/home/mock3.png";
+
+import memri from "../../assets/myWork/TopImages/memri.png";
+import optifino from "../../assets/myWork/TopImages/optifino.png";
+import jpMorgan from "../../assets/myWork/TopImages/jpMorgan.png";
+import toronto from "../../assets/myWork/TopImages/toronto.png";
+import aaron from "../../assets/myWork/Projects/Aaron.png";
+import boracho from "../../assets/myWork/Projects/Boracho.png";
+import centerbridge from "../../assets/myWork/Projects/Centerbridge.png";
+import coinbase from "../../assets/myWork/Projects/Coinbase.png";
+import eurotech from "../../assets/myWork/Projects/Eurotech.png";
+import hotel from "../../assets/myWork/Projects/Hotel.png";
+import humankind from "../../assets/myWork/Projects/Humankind.png";
+import south from "../../assets/myWork/Projects/South.png";
+import special from "../../assets/myWork/Projects/Special.png";
 
 import bursonLogo from "../../assets/home/brands/burson.png";
 import centerbridgeLogo from "../../assets/home/brands/centerbridge.png";
@@ -23,14 +39,45 @@ import yrLogo from "../../assets/home/brands/y&r.png";
 import Work from "../../pages/work/Work";
 import SplitText from "../../components/ui/SplitText";
 import CardSwap, { Card } from "../../components/ui/CardSwap";
-import { CodeXml } from "lucide-react";
+import {
+  ChartNoAxesGantt,
+  CodeXml,
+  GitMerge,
+  RefreshCcwDot,
+} from "lucide-react";
 import AnimatedContent from "../../components/ui/AnimatedContent";
 import LiquidEther from "../../components/ui/LiquidEther";
 import DarkVeil from "../../components/ui/DarkVeil";
 import Magnet from "../../components/ui/Magnet";
 import TiltedCard from "../../components/ui/TiltedCard";
+import LogoLoop from "../../components/ui/LogoLoop";
+import MagicBento from "../../components/ui/MagicBento";
+import FlowingMenu from "../../components/ui/FlowingMenu";
+import InfiniteScroll from "../../components/ui/InfiniteScroll";
 
 const Home = () => {
+  const demoItems = [
+    {
+      link: "#",
+      text: "J.P.Morgan",
+      image: "https://picsum.photos/600/400?random=1",
+    },
+    {
+      link: "#",
+      text: "Hotel on Rivington",
+      image: "https://picsum.photos/600/400?random=2",
+    },
+    {
+      link: "#",
+      text: "Centerbridge",
+      image: "https://picsum.photos/600/400?random=3",
+    },
+    {
+      link: "#",
+      text: "Special",
+      image: "https://picsum.photos/600/400?random=4",
+    },
+  ];
   const clientLogos = [
     { name: "J.P.Morgan", src: jpLogo, alt: "J.P.Morgan" },
     {
@@ -65,6 +112,305 @@ const Home = () => {
     },
   ];
 
+  const cardData = [
+    {
+      color: "#E5E7EB",
+      title: "MEMRI",
+      description: "TRUTH IS COMPLEX. SPEAK ITS LANGUAGE.",
+      label: "Civic + Public + Political",
+      image: memri,
+    },
+    {
+      color: "#7C3AED",
+      title: "Optifino",
+      description: "Technology",
+      label: "Technology",
+      image: optifino,
+    },
+    {
+      color: "#F3F4F6",
+      title: "The One Toronto",
+      description: "Real Estate",
+      label: "Real Estate",
+      image: toronto,
+    },
+    {
+      color: "#3B82F6",
+      title: "Aaron Matthew SIDS Research Guild",
+      description: "Not-For-Profit",
+      label: "Not-For-Profit",
+      image: aaron,
+    },
+    {
+      color: "#E5E7EB",
+      title: "Centerbridge Partners",
+      description: "Banking + Finance",
+      label: "Banking + Finance",
+      image: centerbridge,
+    },
+    {
+      color: "#2563EB",
+      title: "Coinbase",
+      description: "Banking + Finance",
+      label: "Banking + Finance",
+      image: coinbase,
+    },
+    {
+      color: "#F59E0B",
+      title: "Hotel on Rivington",
+      description: "Hospitality",
+      label: "Hospitality",
+      image: hotel,
+    },
+    {
+      color: "#15803D",
+      title: "JPMorgan",
+      description: "INTERNATIONAL COUNCIL",
+      label: "Financial Services",
+      image: jpMorgan,
+    },
+    {
+      color: "#1E40AF",
+      title: "Special Olympics",
+      description: "Not-For-Profit",
+      label: "Not-For-Profit",
+      image: special,
+    },
+    {
+      color: "#22C55E",
+      title: "South Africa Tourism",
+      description: "Civic + Public + Political",
+      label: "Civic + Public + Political",
+      image: south,
+    },
+    // {
+    //   color: "#06B6D4",
+    //   title: "Boracho Hard Seltzer",
+    //   description: "Consumer",
+    //   label: "Consumer",
+    //   image: boracho,
+    // },
+    // {
+    //   color: "#1D4ED8",
+    //   title: "Eurotech",
+    //   description: "B2B",
+    //   label: "B2B",
+    //   image: eurotech,
+    // },
+    // {
+    //   color: "#0D9488",
+    //   title: "Humankind Investments",
+    //   description: "Banking + Finance",
+    //   label: "Banking + Finance",
+    //   image: humankind,
+    // },
+  ];
+
+  const items = [
+    {
+      content: (
+        <div
+          className="p-6 rounded-lg h-full flex flex-col"
+          style={{ backgroundColor: "#E5E7EB" }}
+        >
+          <img
+            src={memri}
+            alt="MEMRI"
+            className="w-full h-48 object-contain mb-4"
+          />
+          <h3 className="text-xl font-bold mb-2 text-white">MEMRI</h3>
+          <p className="text-sm mb-2 text-white">
+            TRUTH IS COMPLEX. SPEAK ITS LANGUAGE.
+          </p>
+          <span className="text-xs mt-auto inline-block px-3 py-1 bg-white/20 rounded-full text-white">
+            Civic + Public + Political
+          </span>
+        </div>
+      ),
+    },
+    {
+      content: (
+        <div
+          className="p-6 rounded-lg h-full flex flex-col"
+          style={{ backgroundColor: "#7C3AED" }}
+        >
+          <img
+            src={optifino}
+            alt="Optifino"
+            className="w-full h-48 object-contain mb-4"
+          />
+          <h3 className="text-xl font-bold mb-2 text-white">Optifino</h3>
+          <p className="text-sm mb-2 text-white">Technology</p>
+          <span className="text-xs mt-auto inline-block px-3 py-1 bg-white/20 rounded-full text-white">
+            Technology
+          </span>
+        </div>
+      ),
+    },
+    {
+      content: (
+        <div
+          className="p-6 rounded-lg h-full flex flex-col"
+          style={{ backgroundColor: "#F3F4F6" }}
+        >
+          <img
+            src={toronto}
+            alt="The One Toronto"
+            className="w-full h-48 object-contain mb-4"
+          />
+          <h3 className="text-xl font-bold mb-2 text-white">The One Toronto</h3>
+          <p className="text-sm mb-2 text-white">Real Estate</p>
+          <span className="text-xs mt-auto inline-block px-3 py-1 bg-white/20 rounded-full text-white">
+            Real Estate
+          </span>
+        </div>
+      ),
+    },
+    {
+      content: (
+        <div
+          className="p-6 rounded-lg h-full flex flex-col"
+          style={{ backgroundColor: "#3B82F6" }}
+        >
+          <img
+            src={aaron}
+            alt="Aaron Matthew SIDS Research Guild"
+            className="w-full h-48 object-contain mb-4"
+          />
+          <h3 className="text-xl font-bold mb-2 text-white">
+            Aaron Matthew SIDS Research Guild
+          </h3>
+          <p className="text-sm mb-2 text-white">Not-For-Profit</p>
+          <span className="text-xs mt-auto inline-block px-3 py-1 bg-white/20 rounded-full text-white">
+            Not-For-Profit
+          </span>
+        </div>
+      ),
+    },
+    {
+      content: (
+        <div
+          className="p-6 rounded-lg h-full flex flex-col"
+          style={{ backgroundColor: "#E5E7EB" }}
+        >
+          <img
+            src={centerbridge}
+            alt="Centerbridge Partners"
+            className="w-full h-48 object-contain mb-4"
+          />
+          <h3 className="text-xl font-bold mb-2 text-white">
+            Centerbridge Partners
+          </h3>
+          <p className="text-sm mb-2 text-white">Banking + Finance</p>
+          <span className="text-xs mt-auto inline-block px-3 py-1 bg-white/20 rounded-full text-white">
+            Banking + Finance
+          </span>
+        </div>
+      ),
+    },
+    {
+      content: (
+        <div
+          className="p-6 rounded-lg h-full flex flex-col"
+          style={{ backgroundColor: "#2563EB" }}
+        >
+          <img
+            src={coinbase}
+            alt="Coinbase"
+            className="w-full h-48 object-contain mb-4"
+          />
+          <h3 className="text-xl font-bold mb-2 text-white">Coinbase</h3>
+          <p className="text-sm mb-2 text-white">Banking + Finance</p>
+          <span className="text-xs mt-auto inline-block px-3 py-1 bg-white/20 rounded-full text-white">
+            Banking + Finance
+          </span>
+        </div>
+      ),
+    },
+    // {
+    //   content: (
+    //     <div
+    //       className="p-6 rounded-lg h-full flex flex-col"
+    //       style={{ backgroundColor: "#F59E0B" }}
+    //     >
+    //       <img
+    //         src={hotel}
+    //         alt="Hotel on Rivington"
+    //         className="w-full h-48 object-contain mb-4"
+    //       />
+    //       <h3 className="text-xl font-bold mb-2 text-white">
+    //         Hotel on Rivington
+    //       </h3>
+    //       <p className="text-sm mb-2 text-white">Hospitality</p>
+    //       <span className="text-xs mt-auto inline-block px-3 py-1 bg-white/20 rounded-full text-white">
+    //         Hospitality
+    //       </span>
+    //     </div>
+    //   ),
+    // },
+    // {
+    //   content: (
+    //     <div
+    //       className="p-6 rounded-lg h-full flex flex-col"
+    //       style={{ backgroundColor: "#15803D" }}
+    //     >
+    //       <img
+    //         src={jpMorgan}
+    //         alt="JPMorgan"
+    //         className="w-full h-48 object-contain mb-4"
+    //       />
+    //       <h3 className="text-xl font-bold mb-2 text-white">JPMorgan</h3>
+    //       <p className="text-sm mb-2 text-white">INTERNATIONAL COUNCIL</p>
+    //       <span className="text-xs mt-auto inline-block px-3 py-1 bg-white/20 rounded-full text-white">
+    //         Financial Services
+    //       </span>
+    //     </div>
+    //   ),
+    // },
+    // {
+    //   content: (
+    //     <div
+    //       className="p-6 rounded-lg h-full flex flex-col"
+    //       style={{ backgroundColor: "#1E40AF" }}
+    //     >
+    //       <img
+    //         src={special}
+    //         alt="Special Olympics"
+    //         className="w-full h-48 object-contain mb-4"
+    //       />
+    //       <h3 className="text-xl font-bold mb-2 text-white">
+    //         Special Olympics
+    //       </h3>
+    //       <p className="text-sm mb-2 text-white">Not-For-Profit</p>
+    //       <span className="text-xs mt-auto inline-block px-3 py-1 bg-white/20 rounded-full text-white">
+    //         Not-For-Profit
+    //       </span>
+    //     </div>
+    //   ),
+    // },
+    // {
+    //   content: (
+    //     <div
+    //       className="p-6 rounded-lg h-full flex flex-col"
+    //       style={{ backgroundColor: "#22C55E" }}
+    //     >
+    //       <img
+    //         src={south}
+    //         alt="South Africa Tourism"
+    //         className="w-full h-48 object-contain mb-4"
+    //       />
+    //       <h3 className="text-xl font-bold mb-2 text-white">
+    //         South Africa Tourism
+    //       </h3>
+    //       <p className="text-sm mb-2 text-white">Civic + Public + Political</p>
+    //       <span className="text-xs mt-auto inline-block px-3 py-1 bg-white/20 rounded-full text-white">
+    //         Civic + Public + Political
+    //       </span>
+    //     </div>
+    //   ),
+    // },
+  ];
+
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -84,6 +430,7 @@ const Home = () => {
         "Your content goes here for the first card. Replace this with whatever you need.",
       bgColor: "bg-[#F5F5F5]",
       textColor: "text-black",
+      image: mock1,
     },
     {
       id: 2,
@@ -92,6 +439,7 @@ const Home = () => {
         "Your content goes here for the second card. Replace this with whatever you need.",
       bgColor: "bg-white",
       textColor: "text-black",
+      image: mock2,
     },
     {
       id: 3,
@@ -100,6 +448,7 @@ const Home = () => {
         "Your content goes here for the third card. Replace this with whatever you need.",
       bgColor: "bg-[#1E1E1E]",
       textColor: "text-white",
+      image: mock3,
     },
     {
       id: 4,
@@ -108,6 +457,7 @@ const Home = () => {
         "Your content goes here for the fourth card. Replace this with whatever you need.",
       bgColor: "bg-[#E9EBF0]",
       textColor: "text-black",
+      image: mock1,
     },
   ];
 
@@ -123,27 +473,72 @@ const Home = () => {
       // transform: `translateY(${progress * 20}px) scale(${1 - progress * 0.05})`,
       zIndex: index + 1,
       position: "sticky",
-      top: `${100 + index * 20}px`,
+      top: `${100 + index * 110}px`,
     };
   };
 
+  const techLogos = [
+    {
+      node: (
+        <div className="flex items-center gap-2">
+          <CodeXml />
+          <div className="text-lg">CodeXml</div>
+        </div>
+      ),
+      title: "React",
+      href: "https://react.dev",
+    },
+    {
+      node: (
+        <div className="flex items-center gap-2">
+          <ChartNoAxesGantt />
+          <div className="text-lg">ChartNoAxesGantt</div>
+        </div>
+      ),
+      title: "Next.js",
+      href: "https://nextjs.org",
+    },
+    {
+      node: (
+        <div className="flex items-center gap-2">
+          <GitMerge />
+          <div className="text-lg">GitMerge</div>
+        </div>
+      ),
+      title: "TypeScript",
+      href: "https://www.typescriptlang.org",
+    },
+    {
+      node: (
+        <div className="flex items-center gap-2">
+          <RefreshCcwDot />
+          <div className="text-lg">RefreshCcwDot</div>
+        </div>
+      ),
+      title: "Tailwind CSS",
+      href: "https://tailwindcss.com",
+    },
+  ];
+
   return (
     <div className="mt-20 md:mt-[88px] min-h-screen bg-white">
-      {/* Header Section with Black Background */}
+      {/* Hero Section with Black Background */}
 
-      <section className="bg-black text-white min-h- screen flex items-center pt-24">
+      <section className="pointer-events-none bg-black text-white min-h- screen flex items-center pt- 24 sticky top-24 12 left-0 w-full overflow-hidden z-0">
         <div
           style={{
-            width: "100%",
+            width: "100vw",
             height: "600px",
             position: "absolute",
             top: 0,
+            left: 0,
+            right: 0,
           }}
         >
           <DarkVeil speed={3} hueShift={214} />
         </div>
-        <div className="">
-          <div className="gap-12 items-center">
+        <div className="w-full max-w-[2560px] mx-auto mt-20">
+          <div className="gap-12 items-center w-full">
             {/* Left side - Logo and Main Heading */}
             <div className="space-y-8 sm:w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
               {/* Main Headline */}
@@ -166,7 +561,7 @@ const Home = () => {
             </div>
 
             {/* Right side - Company Description */}
-            <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-center lg:items-start relative overflow-hidden">
+            <div className="flex flex-col lg:flex-row w-full gap-12 lg:gap-24 items-center lg:items-start relative overflow-hidden">
               <div className="ml-[5%] px-4 sm:px-6 lg:px-8 w-1/2 flex flex-col-reverse sm:flex-col gap-12 sm:gap-0 w mt-12">
                 <div className="w-full sm:w- 1/2">
                   <AnimatedContent
@@ -314,194 +709,305 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Bottom Message Section */}
-      <section className="bg-white py-20">
-        <div className="flex justify-center">
-          <Magnet padding={50} disabled={false} magnetStrength={10}>
-            <TiltedCard
-              imageSrc={heroImage}
-              altText="Marshall Haber Creative Group"
-              captionText="Marshall Haber Creative Group"
-              containerHeight="400px"
-              containerWidth="800px"
-              imageHeight="400px"
-              imageWidth="800px"
-              rotateAmplitude={12}
-              scaleOnHover={1}
-              showMobileWarning={false}
-              showTooltip={true}
-              displayOverlayContent={true}
-              // overlayContent={
-              //   <img src={heroImage} alt="Hero" className="w- [220px]" />
-              // }
-            />
-          </Magnet>
-        </div>
-        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <SplitText
-            text="We empower our clients and deliver uncompromising results backed by
-            personal commitment to their success."
-            className="mt-10 text-2xl lg:text-3xl text-[#202020] font-medium"
-            delay={100}
-            duration={0.6}
-            ease="power3.out"
-            splitType="words"
-            from={{ opacity: 0, y: 40 }}
-            to={{ opacity: 1, y: 0 }}
-            threshold={0.1}
-            rootMargin="-100px"
-            textAlign="center"
+      <section className="bg-white pt-2 pb- 20 relative z-10 sm:mt- [750px]">
+        {/* Bottom Message Section */}
+        <div
+          style={{ height: "100px", position: "relative", overflow: "hidden" }}
+        >
+          <LogoLoop
+            logos={techLogos}
+            speed={60}
+            direction="left"
+            logoHeight={24}
+            gap={80}
+            pauseOnHover
+            scaleOnHover
+            fadeOut
+            fadeOutColor="#ffffff"
+            ariaLabel="Technology partners"
           />
-          {/* <p className="mt-10 text-2xl lg:text-3xl text-[#202020] font-medium">
+        </div>
+        <section className="bg-white py-24 relative z-10">
+          <div className="flex justify-center">
+            <Magnet padding={50} disabled={false} magnetStrength={10}>
+              <TiltedCard
+                imageSrc={heroImage}
+                altText="Marshall Haber Creative Group"
+                captionText="Marshall Haber Creative Group"
+                containerHeight="400px"
+                containerWidth="800px"
+                imageHeight="400px"
+                imageWidth="800px"
+                rotateAmplitude={12}
+                scaleOnHover={1}
+                showMobileWarning={false}
+                showTooltip={true}
+                displayOverlayContent={true}
+                // overlayContent={
+                //   <img src={heroImage} alt="Hero" className="w- [220px]" />
+                // }
+              />
+            </Magnet>
+          </div>
+          <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+            <SplitText
+              text="We empower our clients and deliver uncompromising results backed by
+            personal commitment to their success."
+              className="mt-10 text-2xl lg:text-3xl text-[#202020] font-medium"
+              delay={100}
+              duration={0.6}
+              ease="power3.out"
+              splitType="words"
+              from={{ opacity: 0, y: 40 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.1}
+              rootMargin="-100px"
+              textAlign="center"
+            />
+            {/* <p className="mt-10 text-2xl lg:text-3xl text-[#202020] font-medium">
             We empower our clients and deliver uncompromising results backed by
             personal commitment to their success.
           </p> */}
-        </div>
-      </section>
+          </div>
+        </section>
 
-      {/* Optional CTA Section */}
-      <section className="bg- black text- white">
-        <div className="w-[90%] mx-auto">
+        {/* Optional CTA Section */}
+        <section className="bg-black text- white pt- 12">
+          <div
+            style={{ height: "600px", position: "relative" }}
+            className="border-y -2 border-t-black border-b-white"
+          >
+            <FlowingMenu items={demoItems} />
+          </div>
+
           {/* Logo Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-16">
-            {clientLogos.map((logo, index) => (
-              <div
-                key={index}
-                className="rounded-lg p-6 flex items-center justify-center h-32 hover:bg-gray-200 bg-[#F2F2F2] transition-colors duration-300"
-              >
-                <img
-                  src={logo.src}
-                  alt={logo.alt}
-                  className="max-w-full max-h-full object-contain hover:grayscale-0 transition-all duration-300"
-                  onError={(e) => {
-                    // Fallback to text if image fails to load
-                    e.target.style.display = "none";
-                    e.target.nextSibling.style.display = "block";
-                  }}
-                />
-                <span className="text-gray-600 text-sm font-medium text-center hidden">
-                  {logo.name}
-                </span>
-              </div>
-            ))}
+          {/* <div className="w-[90%] mx-auto">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-16">
+              {clientLogos.map((logo, index) => (
+                <div
+                  key={index}
+                  className="rounded-lg p-6 flex items-center justify-center h-32 hover:bg-gray-200 bg-[#F2F2F2] transition-colors duration-300"
+                >
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    className="max-w-full max-h-full object-contain hover:grayscale-0 transition-all duration-300"
+                    onError={(e) => {
+                      e.target.style.display = "none";
+                      e.target.nextSibling.style.display = "block";
+                    }}
+                  />
+                  <span className="text-gray-600 text-sm font-medium text-center hidden">
+                    {logo.name}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <div className="text-center mt-4 font-serif">
+              <h2 className="text-[#202020] text-5xl md:text-6xl lg:text-7xl font-light leading- tight mb- 8">
+                We work with brands that
+              </h2>
+              <h3 className="text-[#707070] text-5xl md:text-6xl lg:text-7xl font-light leading-tight mb-12">
+                want to lead
+                <em className="text-[#202020] italic">, not follow</em>.
+              </h3>
+            </div>
+
+            <div className="text-center  font-serif">
+              <button className="text-[#202020] text-lg hover:text-gray-600 transition-colors duration-300 flex flex-col items-center justify-center mx-auto group">
+                See latest projects
+                <svg
+                  className="w-6 h-6 ml-2 transform group-hover:translate-y-1 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div> */}
+
+          <div style={{ height: "600px", position: "relative" }}>
+            <InfiniteScroll
+              items={items}
+              isTilted={true}
+              tiltDirection="left"
+              autoplay={true}
+              autoplaySpeed={0.2}
+              autoplayDirection="up"
+              pauseOnHover={true}
+            />
           </div>
 
-          {/* Main Text */}
-          <div className="text-center mt-4 font-serif">
-            <h2 className="text-[#202020] text-5xl md:text-6xl lg:text-7xl font-light leading- tight mb- 8">
-              We work with brands that
-            </h2>
-            <h3 className="text-[#707070] text-5xl md:text-6xl lg:text-7xl font-light leading-tight mb-12">
-              want to lead
-              <em className="text-[#202020] italic">, not follow</em>.
-            </h3>
-          </div>
-
-          {/* CTA */}
-          <div className="text-center  font-serif">
-            <button className="text-[#202020] text-lg hover:text-gray-600 transition-colors duration-300 flex flex-col items-center justify-center mx-auto group">
-              See latest projects
-              <svg
-                className="w-6 h-6 ml-2 transform group-hover:translate-y-1 transition-transform duration-300"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 14l-7 7m0 0l-7-7m7 7V3"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-        <div className="mt-20">
-          <Work isHome={true} />
-        </div>
-      </section>
-      <section className="mt-2">
-        <div className="text-center text-[#202020] ">
-          <h2 className="text-[#202020] text-5xl md:text-6xl lg:text-7xl font-light">
-            We <span className="text-[#707070] ">equip, empower, and</span>
-          </h2>
-          <h3 className="text-5xl md:text-6xl lg:text-7xl font-light ">
-            <span className="text-[#707070] ">inspire</span> tomorrow's leaders
-          </h3>
-          <h3 className="text-5xl md:text-6xl lg:text-7xl font-light">
-            through
-            <em className="italic"> premium branding</em>.
-          </h3>
-        </div>
-
-        <div className="relative mt-12">
-          {cards.map((card, index) => (
-            <div
-              key={card.id}
-              className="w-full h- screen px-4 md:px-8 lg:px-0 16 drop-shadow-xl"
-              style={getCardStyle(index)}
+          {/* <div className=" mt- 12">
+            <MagicBento
+              className="w-full "
+              cardData={cardData}
+              textAutoHide={true}
+              enableStars={true}
+              enableSpotlight={true}
+              enableBorderGlow={true}
+              enableTilt={false}
+              enableMagnetism={false}
+              clickEffect={true}
+              spotlightRadius={1000}
+              particleCount={20}
+              glowColor="256, 256, 256"
+            />
+          </div> */}
+          {/* <div className="mt-20">
+            <Work isHome={true} />
+          </div> */}
+        </section>
+        <section className="mt-16 overflow-hi dden">
+          <div className="overflow-hidden pb-2">
+            <AnimatedContent
+              distance={150}
+              direction="horizontal"
+              reverse={false}
+              duration={0.6}
+              ease="power3.out"
+              initialOpacity={0}
+              animateOpacity
+              scale={1.1}
+              threshold={0.2}
+              delay={0.2}
             >
+              <div className="text-center text-[#202020] ">
+                <h2 className="text-[#202020] text-5xl md:text-6xl lg:text-7xl font-light">
+                  We{" "}
+                  <span className="text-[#707070] ">equip, empower, and</span>
+                </h2>
+              </div>
+            </AnimatedContent>
+            <AnimatedContent
+              distance={150}
+              direction="horizontal"
+              reverse={false}
+              duration={0.6}
+              ease="power3.out"
+              initialOpacity={0}
+              animateOpacity
+              scale={1.1}
+              threshold={0.2}
+              delay={0.3}
+            >
+              <div className="text-center text-[#202020] ">
+                <h3 className="text-5xl md:text-6xl lg:text-7xl font-light ">
+                  <span className="text-[#707070] ">inspire</span> tomorrow's
+                  leaders
+                </h3>
+              </div>
+            </AnimatedContent>
+            <AnimatedContent
+              distance={150}
+              direction="horizontal"
+              reverse={false}
+              duration={0.6}
+              ease="power3.out"
+              initialOpacity={0}
+              animateOpacity
+              scale={1.1}
+              threshold={0.2}
+              delay={0.4}
+            >
+              <div className="text-center text-[#202020] ">
+                <h3 className="text-5xl md:text-6xl lg:text-7xl font-light">
+                  through
+                  <em className="italic"> premium branding</em>.
+                </h3>
+              </div>
+            </AnimatedContent>
+          </div>
+          {/* <div className="text-center text-[#202020] ">
+            <h2 className="text-[#202020] text-5xl md:text-6xl lg:text-7xl font-light">
+              We <span className="text-[#707070] ">equip, empower, and</span>
+            </h2>
+            <h3 className="text-5xl md:text-6xl lg:text-7xl font-light ">
+              <span className="text-[#707070] ">inspire</span> tomorrow's
+              leaders
+            </h3>
+            <h3 className="text-5xl md:text-6xl lg:text-7xl font-light">
+              through
+              <em className="italic"> premium branding</em>.
+            </h3>
+          </div> */}
+
+          <div className="relative mt-16">
+            {cards.map((card, index) => (
               <div
-                className={`${card.bgColor} ${card.textColor} rounded-lg shadow-2xl h-full w-full flex items-center`}
+                key={card.id}
+                className="w-full h- screen px-4 md:px-8 lg:px-0 16 drop-shadow-xl"
+                style={getCardStyle(index)}
               >
-                {/* Left Content Section */}
-                <div className="flex-1 p-8 lg:p-16">
-                  <div>
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
-                      {card.title}
-                    </h2>
-                    <div className="flex">
-                      <p className="text-lg md:text-xl mb-8 leading-relaxed max-w-xl">
-                        {card.content}
-                      </p>
-                      {/* Services/Features List */}
-                      <div className="space-y-1 mb-8">
-                        <div className="text-base md:text-lg opacity-90">
-                          UX Design
-                        </div>
-                        <div className="text-base md:text-lg opacity-90">
-                          User Testing
-                        </div>
-                        <div className="text-base md:text-lg opacity-90">
-                          Product Prototype
-                        </div>
-                        <div className="text-base md:text-lg opacity-90">
-                          Mobile UI
-                        </div>
-                        <div className="text-base md:text-lg opacity-90">
-                          Software UI design
-                        </div>
-                        <div className="text-base md:text-lg opacity-90">
-                          Web app design
-                        </div>
-                        <div className="text-base md:text-lg opacity-90">
-                          Interaction design
-                        </div>
+                <div
+                  className={`${card.bgColor} ${card.textColor} rounded-lg shadow-2xl h-full w-full flex items-center`}
+                >
+                  {/* Left Content Section */}
+                  <div className="flex-1 p-8 lg:px-16 pb-16 pt-8">
+                    <div>
+                      <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
+                        {card.title}
+                      </h2>
+                      <div className="flex">
+                        <p className="text-lg md:text-xl mb-8 leading-relaxed max-w-xl">
+                          {card.content}
+                        </p>
+                        {/* Services/Features List */}
+                        <ul className="list-disc space-y-1 mb-8">
+                          <li className="text-base md:text-lg opacity-90">
+                            UX Design
+                          </li>
+                          <li className="text-base md:text-lg opacity-90">
+                            User Testing
+                          </li>
+                          <li className="text-base md:text-lg opacity-90">
+                            Product Prototype
+                          </li>
+                          <li className="text-base md:text-lg opacity-90">
+                            Mobile UI
+                          </li>
+                          <li className="text-base md:text-lg opacity-90">
+                            Software UI design
+                          </li>
+                          <li className="text-base md:text-lg opacity-90">
+                            Web app design
+                          </li>
+                          <li className="text-base md:text-lg opacity-90">
+                            Interaction design
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Right Image Section */}
+                  <div className="flex-1 h-full p-8 flex items-center justify-center">
+                    <div className="relative w-full max-w-lg">
+                      {/* Replace 'your-image-path.jpg' with your actual image paths */}
+
+                      {/* Fallback placeholder if you don't have images yet */}
+                      <div className="absolute inset-0  rounded-lg flex items-center justify-center backdrop-blur-sm">
+                        <img
+                          src={card.image}
+                          alt="Mockup"
+                          className="w-full 1/2 h-auto"
+                        />
                       </div>
                     </div>
                   </div>
                 </div>
-
-                {/* Right Image Section */}
-                <div className="flex-1 h-full p-8 flex items-center justify-center">
-                  <div className="relative w-full max-w-lg">
-                    {/* Replace 'your-image-path.jpg' with your actual image paths */}
-
-                    {/* Fallback placeholder if you don't have images yet */}
-                    <div className="absolute inset-0  rounded-lg flex items-center justify-center backdrop-blur-sm">
-                      <img
-                        src={mock1}
-                        alt="Mockup"
-                        className="w-full 1/2 h-auto"
-                      />
-                    </div>
-                  </div>
-                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </section>
       </section>
     </div>
   );

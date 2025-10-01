@@ -4,6 +4,7 @@ import { Menu, Search, X } from "lucide-react";
 import logo from "../../assets/logo/logo.png";
 import bigLogo from "../../assets/logo/footerLogoBlack.png";
 import { Link } from "react-router";
+import PillNav from "../ui/PillNav";
 
 const AnimatedHamburger = ({ isOpen, toggleMenu }) => (
   <button
@@ -80,9 +81,36 @@ const Header = () => {
           />
         </Link>
 
-        <div className="flex items-center space-x-12">
+        <div className="flex items-center justify-end space-x-2 w-full realtive">
           {/* Navigation Links */}
-          <nav className="flex items-center space-x-14 text-lg">
+          <PillNav
+            // logo={logo}
+            // logoAlt="Company Logo"
+            items={[
+              { label: "Work", href: "/work" },
+              { label: "Studio", href: "/studio" },
+              { label: "Clients", href: "/clients" },
+              { label: "Contact", href: "/contact" },
+            ]}
+            activeHref="/"
+            className="flex items-center space-x-14 text-lg mt-2 "
+            ease="power2.easeOut"
+            baseColor="#000000"
+            pillColor="#ffffff"
+            hoveredPillTextColor="#ffffff"
+            pillTextColor="#000000"
+            initialLoadAnimation={false}
+          />
+
+          {/* Search Icon */}
+          <button className="group flex-shrink-0 border-black border-2 p-1.5 2 hover:bg-black grad ient-to-br from-b lue-50 to-pur ple-50 rounded-full transition-all duration-300 transform group-hover:scale-125 group-hover:rotate-12 group-hover:shadow-lg active:scale-90">
+            <Search
+              size={22}
+              className="group-hover:text-white text-gray-700 duration-300  group-hover:drop-shadow-lg"
+            />
+          </button>
+
+          {/* <nav className="flex items-center space-x-14 text-lg">
             <a
               href="/work"
               className="text-gray-700 hover:text-black transition-all duration-300 relative group transform hover:scale-110 hover:-rotate-1 active:scale-95"
@@ -115,17 +143,7 @@ const Header = () => {
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-yellow-600 transition-all duration-400 ease-out group-hover:w-full group-hover:h-1 group-hover:-bottom-1"></span>
               <span className="absolute -top-1 -right-1 w-0 h-0 bg-orange-400 rounded-full transition-all duration-300 group-hover:w-2 group-hover:h-2"></span>
             </a>
-          </nav>
-
-          {/* Search Icon */}
-          <div className="flex-shrink-0">
-            <button className="p-2 hover:bg-gradient-to-br from-blue-50 to-purple-50 rounded-full transition-all duration-300 transform hover:scale-125 hover:rotate-12 hover:shadow-lg active:scale-90">
-              <Search
-                size={24}
-                className="text-gray-700 transition-all duration-300 hover:text-blue-600 hover:drop-shadow-lg"
-              />
-            </button>
-          </div>
+          </nav> */}
         </div>
       </div>
 
