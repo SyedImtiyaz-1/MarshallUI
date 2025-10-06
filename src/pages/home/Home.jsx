@@ -833,6 +833,15 @@ const Home = () => {
               </button>
             </div>
           </div> */}
+          <div className="text-center mt-16 mb-12">
+            <h2 className="text-[#707070] text-5xl md:text-6xl lg:text-7xl font-light leading- tight mb- 8">
+              We work with brands that
+            </h2>
+            <h3 className="text-white [#707070] text-5xl md:text-6xl lg:text-7xl font-light leading-tight mb-12">
+              want to lead
+              <em className="text-[#707070] italic">, not follow.</em>
+            </h3>
+          </div>
 
           <div style={{ height: "600px", position: "relative" }}>
             <InfiniteScroll
