@@ -160,7 +160,9 @@ const Header = () => {
       <div className="md:hidden flex items-center justify-between px-6 py-4">
         {/* Logo */}
         <div className="flex-shrink-0">
-          <img src={logo} alt="Logo" className="size-10 w-auto" />
+          <Link to="/">
+            <img src={logo} alt="Logo" className="size-10 w-auto" />
+          </Link>
         </div>
 
         {/* Mobile Icons */}
