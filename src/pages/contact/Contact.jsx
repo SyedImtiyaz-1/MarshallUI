@@ -27,28 +27,28 @@ const Contact = () => {
   return (
     <div className="mt-20 md:mt-[88px] min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="w-[90%] mx-auto pt-12 pb-8">
-        <p className="text-[#202020] text-lg md:text-xl lg:text-2xl font-light leading-relaxed max-w-lg">
+      <div className="w-[95%] sm:w-[90%] mx-auto pt-8 sm:pt-12 pb-6 sm:pb-8">
+        <p className="text-[#202020] text-base sm:text-lg md:text-xl lg:text-2xl font-light leading-relaxed max-w-lg">
           We Partner With Ambitious Founders
           <br />
           With A Clear Vision And A Deep
           <br />
           Understanding Of Their Customer
         </p>
-        <h2 className="text-[#202020] text-3xl md:text-4xl lg:text-5xl font-bold mt-4">
+        <h2 className="text-[#202020] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-3 sm:mt-4">
           212.494.9052
         </h2>
-        <p className="text-[#202020] text-xl md:text-2xl lg:text-3xl font-medium mt-4 tracking-wide">
+        <p className="text-[#202020] text-base sm:text-xl md:text-2xl lg:text-3xl font-medium mt-3 sm:mt-4 tracking-wide">
           New York &nbsp;·&nbsp; Toronto &nbsp;·&nbsp; Florida
         </p>
       </div>
 
       {/* Divider */}
-      <div className="w-[90%] mx-auto border-t border-[#DCDCDC]" />
+      <div className="w-[95%] sm:w-[90%] mx-auto border-t border-[#DCDCDC]" />
 
       {/* Centered Form Section */}
-      <div className="w-[90%] max-w-2xl mx-auto py-16">
-        <h2 className="text-3xl md:text-4xl font-semibold text-[#1a1a2e] mb-4">
+      <div className="w-[95%] sm:w-[90%] max-w-2xl mx-auto py-10 sm:py-16">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-[#1a1a2e] mb-3 sm:mb-4">
           Want to work with us?
         </h2>
         <p className="text-gray-600 text-sm leading-relaxed mb-10">

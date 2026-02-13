@@ -145,9 +145,9 @@ const Clients = () => {
   return (
     <div className="mt-20 md:mt-[88px] min-h-screen bg-white text-black overflow-x-hidden pb-32">
       {/* Header Section */}
-      <div className="bg-white text-[#202020] py-16 px-6 mt-4">
+      <div className="bg-white text-[#202020] py-8 sm:py-16 px-4 sm:px-6 mt-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-xl md:text-2xl lg:text-3xl font-semibold leading-tight">
+          <h1 className="text-base sm:text-xl md:text-2xl lg:text-3xl font-semibold leading-tight">
             We Use Design And Strategy To Empower Our Clients And
             <br /> Create Impactful Results For Their High-Profile And Complex
             <br /> Business Challenges.
@@ -156,7 +156,7 @@ const Clients = () => {
       </div>
 
       {/* Carousel Section - NOW ON TOP */}
-      <div className="py-4 w-full max-w-[95vw] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="py-4 w-[95%] sm:w-full max-w-[95vw] mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
         <style>{`
           .slick-slide {
             padding: 0 8px;

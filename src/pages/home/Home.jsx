@@ -531,7 +531,7 @@ const Home = () => {
             <div className="sm:w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
               <SplitText
                 text="Make your brand so clear, it becomes unforgettable."
-                className="text-2xl sm:text-5xl lg:text-7xl font-light leading-tight text-white"
+                className="text-xl sm:text-4xl md:text-5xl lg:text-7xl font-light leading-tight text-white"
                 delay={100}
                 duration={0.6}
                 ease="power3.out"
@@ -563,13 +563,13 @@ const Home = () => {
                     <img
                       src={heroImage}
                       alt="Hero"
-                      className="w-[120px] sm:w-[150px] h-auto rounded-sm"
+                      className="w-[80px] sm:w-[120px] md:w-[150px] h-auto rounded-sm"
                     />
                   </AnimatedContent>
                 </div>
 
                 {/* Two text columns - right side */}
-                <div className="flex gap-8 sm:gap-12 max-w-xl">
+                <div className="flex flex-col sm:flex-row gap-6 sm:gap-12 max-w-xl">
                   <div className="w-1/2">
                     <AnimatedContent
                       distance={150}
@@ -640,7 +640,7 @@ const Home = () => {
             src={heroImage}
             alt="Marshall Haber Creative Group"
             className="w-full max-w-4xl rounded-2xl object-cover"
-            style={{ maxHeight: "500px" }}
+            style={{ maxHeight: "300px" }}
           />
         </div>
       </section>
@@ -650,7 +650,7 @@ const Home = () => {
           <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
             <SplitText
               text="We empower our clients and deliver uncompromising results backed by personal commitment to their success."
-              className="text-2xl lg:text-3xl text-[#202020] font-medium"
+              className="text-lg sm:text-2xl lg:text-3xl text-[#202020] font-medium"
               delay={100}
               duration={0.6}
               ease="power3.out"
@@ -668,11 +668,11 @@ const Home = () => {
         <section className="bg-white pt-12">
           {/* Logo Grid */}
           <div className="w-[90%] mx-auto">
-            <div className="grid grid-cols-3 sm:grid-cols-5 gap-6 mb-16">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6 mb-16">
               {clientLogos.map((logo, index) => (
                 <div
                   key={index}
-                  className="rounded-lg p-6 flex items-center justify-center h-32 hover:bg-gray-200 bg-[#F2F2F2] transition-colors duration-300"
+                  className="rounded-lg p-4 sm:p-6 flex items-center justify-center h-24 sm:h-32 hover:bg-gray-200 bg-[#F2F2F2] transition-colors duration-300"
                 >
                   <img
                     src={logo.src}
@@ -691,10 +691,10 @@ const Home = () => {
             </div>
 
             <div className="text-center mt-4 font-serif">
-              <h2 className="text-[#202020] text-5xl md:text-6xl lg:text-7xl font-light leading-tight mb-2">
+              <h2 className="text-[#202020] text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-light leading-tight mb-2">
                 We work with brands that
               </h2>
-              <h3 className="text-[#707070] text-5xl md:text-6xl lg:text-7xl font-light leading-tight mb-6">
+              <h3 className="text-[#707070] text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-light leading-tight mb-6">
                 want to lead
                 <em className="text-[#202020] italic">, not follow</em>.
               </h3>
@@ -802,7 +802,7 @@ const Home = () => {
               delay={0.2}
             >
               <div className="text-center text-[#202020] ">
-                <h2 className="text-[#202020] text-5xl md:text-6xl lg:text-7xl font-light">
+                <h2 className="text-[#202020] text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-light">
                   We{" "}
                   <span className="text-[#707070] ">equip, empower, and</span>
                 </h2>
@@ -821,7 +821,7 @@ const Home = () => {
               delay={0.3}
             >
               <div className="text-center text-[#202020] ">
-                <h3 className="text-5xl md:text-6xl lg:text-7xl font-light ">
+                <h3 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-light ">
                   <span className="text-[#707070] ">inspire</span> tomorrow's
                   leaders
                 </h3>
@@ -840,7 +840,7 @@ const Home = () => {
               delay={0.4}
             >
               <div className="text-center text-[#202020] ">
-                <h3 className="text-5xl md:text-6xl lg:text-7xl font-light">
+                <h3 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-light">
                   through
                   <em className="italic"> premium branding</em>.
                 </h3>
@@ -865,19 +865,19 @@ const Home = () => {
             {cards.map((card, index) => (
               <div
                 key={card.id}
-                className="w-full h- screen px-4 md:px-8 lg:px-0 16 drop-shadow-xl"
+                className="w-full min-h-[60vh] md:min-h-[80vh] lg:h-screen px-4 md:px-8 lg:px-16 drop-shadow-xl"
                 style={getCardStyle(index)}
               >
                 <div
-                  className={`${card.bgColor} ${card.textColor} rounded-lg shadow-2xl h-full w-full flex items-center`}
+                  className={`${card.bgColor} ${card.textColor} rounded-lg shadow-2xl h-full w-full flex flex-col md:flex-row items-center`}
                 >
                   {/* Left Content Section */}
-                  <div className="flex-1 p-8 lg:px-16 pb-16 pt-8">
+                  <div className="flex-1 p-6 sm:p-8 lg:px-16 pb-8 sm:pb-16 pt-6 sm:pt-8">
                     <div>
-                      <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
+                      <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-8">
                         {card.title}
                       </h2>
-                      <div className="flex">
+                      <div className="flex flex-col sm:flex-row">
                         <p className="text-lg md:text-xl mb-8 leading-relaxed max-w-xl">
                           {card.content}
                         </p>
@@ -910,7 +910,7 @@ const Home = () => {
                   </div>
 
                   {/* Right Image Section */}
-                  <div className="flex-1 h-full p-8 flex items-center justify-center">
+                  <div className="flex-1 h-full p-4 sm:p-8 hidden md:flex items-center justify-center">
                     <div className="relative w-full max-w-lg">
                       {/* Replace 'your-image-path.jpg' with your actual image paths */}
 

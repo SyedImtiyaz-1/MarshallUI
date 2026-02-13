@@ -174,12 +174,12 @@ const Work = ({ isHome = false }) => {
           </div>
         </div>
       )}
-      <div className="mx-auto md:w-[90%]">
+      <div className="w-[95%] sm:w-[90%] mx-auto">
         {/* Header */}
         {!isHome && (
           <div className="px-6 py-8">
-            <div className="flex flex- col md:flex-row gap-2 md:gap-0 justify-between items-center">
-              <h1 className="text-4xl md:text-6xl font-light text-black">
+            <div className="flex flex-col md:flex-row gap-2 md:gap-0 justify-between items-start md:items-center">
+              <h1 className="text-3xl md:text-4xl lg:text-6xl font-light text-black">
                 Work
               </h1>
               <div className="flex gap-2 md:gap-6 text-sm text-gray-600">
@@ -225,14 +225,14 @@ const Work = ({ isHome = false }) => {
         </div> */}
 
         {/* Bottom Projects Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 px-6 pb-8 mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 px-4 sm:px-6 pb-8 mx-auto">
           {bottomProjects.map((project) => (
             <Link
               to={`/work/${project.id}`}
               key={project.id}
               className="group cursor-pointer transform transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
             >
-              <div className="rounded-lg md:rounded-none md:rounded-t-lg overflow-hidden h-40 md:h-80 relative group-hover:shadow-inner transition-all duration-300">
+              <div className="rounded-lg md:rounded-none md:rounded-t-lg overflow-hidden h-48 sm:h-40 md:h-80 relative group-hover:shadow-inner transition-all duration-300">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <img
                     src={project.image}

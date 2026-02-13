@@ -55,17 +55,17 @@ const Studio = () => {
   return (
     <div className="mt-24">
       <div className="text-center">
-        <div className="text-7xl md:text-[350px] leading-none font-semibold">
+        <div className="text-4xl sm:text-7xl md:text-[200px] lg:text-[350px] leading-none font-semibold">
           Est. 2005
         </div>
-        <div className="font-semibold text-2xl mt-8 leading-none">
+        <div className="font-semibold text-lg sm:text-2xl mt-4 sm:mt-8 leading-none">
           Guided by clarity,
           <br />
           driven by experience.
         </div>
       </div>
       <div className="mt-18">
-        <div className="text-center text-[#707070] text-2xl md:text-3xl lg:text-4xl px-4 md:px-0 md:w-[40%] mx-auto">
+        <div className="text-center text-[#707070] text-lg sm:text-2xl md:text-3xl lg:text-4xl px-4 md:px-0 md:w-[40%] mx-auto">
           <h2 className="font-light">
             <span className="text-[#202020] italic"> Marshall Haber </span>{" "}
             founded his studio with one goal: to bring{" "}
@@ -87,19 +87,19 @@ const Studio = () => {
         {cards.map((card, index) => (
           <div
             key={card.id}
-            className="w-full h-screen px-4 md:px-8 lg:px-16 drop-shadow-xl"
+            className="w-full min-h-[60vh] md:min-h-[80vh] lg:h-screen px-4 md:px-8 lg:px-16 drop-shadow-xl"
             style={getCardStyle(index)}
           >
             <div
-              className={`${card.bgColor} ${card.textColor} rounded-lg shadow-2xl h-full w-full flex items-center`}
+              className={`${card.bgColor} ${card.textColor} rounded-lg shadow-2xl h-full w-full flex flex-col md:flex-row items-center`}
             >
               {/* Left Content Section */}
-              <div className="flex-1 p-8 lg:p-16">
+              <div className="flex-1 p-6 sm:p-8 lg:p-16">
                 <div>
-                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
+                  <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-8">
                     {card.title}
                   </h2>
-                  <div className="flex">
+                  <div className="flex flex-col sm:flex-row">
                     <p className="text-lg md:text-xl mb-8 leading-relaxed max-w-xl">
                       {card.content}
                     </p>
@@ -132,7 +132,7 @@ const Studio = () => {
               </div>
 
               {/* Right Image Section */}
-              <div className="flex-1 h-full p-8 flex items-center justify-center">
+              <div className="flex-1 h-full p-4 sm:p-8 hidden md:flex items-center justify-center">
                 <div className="relative w-full max-w-lg">
                   <div className="absolute inset-0 rounded-lg flex items-center justify-center backdrop-blur-sm">
                     <img
