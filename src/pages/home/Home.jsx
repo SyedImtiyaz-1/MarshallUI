@@ -183,27 +183,27 @@ const Home = () => {
       label: "Civic + Public + Political",
       image: south,
     },
-    // {
-    //   color: "#06B6D4",
-    //   title: "Boracho Hard Seltzer",
-    //   description: "Consumer",
-    //   label: "Consumer",
-    //   image: boracho,
-    // },
-    // {
-    //   color: "#1D4ED8",
-    //   title: "Eurotech",
-    //   description: "B2B",
-    //   label: "B2B",
-    //   image: eurotech,
-    // },
-    // {
-    //   color: "#0D9488",
-    //   title: "Humankind Investments",
-    //   description: "Banking + Finance",
-    //   label: "Banking + Finance",
-    //   image: humankind,
-    // },
+    {
+      color: "#06B6D4",
+      title: "Boracho Hard Seltzer",
+      description: "Consumer",
+      label: "Consumer",
+      image: boracho,
+    },
+    {
+      color: "#1D4ED8",
+      title: "Eurotech",
+      description: "B2B",
+      label: "B2B",
+      image: eurotech,
+    },
+    {
+      color: "#0D9488",
+      title: "Humankind Investments",
+      description: "Banking + Finance",
+      label: "Banking + Finance",
+      image: humankind,
+    },
   ];
 
   const items = [
@@ -524,27 +524,14 @@ const Home = () => {
     <div className="mt-20 md:mt-[88px] min-h-screen bg-white">
       {/* Hero Section with Black Background */}
 
-      <section className="pointer-events-none bg-black text-white min-h- screen flex items-center pt- 24 sticky top-24 12 left-0 w-full overflow-hidden z-0">
-        <div
-          style={{
-            width: "100vw",
-            height: "600px",
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-          }}
-        >
-          <DarkVeil speed={3} hueShift={214} />
-        </div>
-        <div className="w-full max-w-[2560px] mx-auto mt-20">
-          <div className="gap-12 items-center w-full">
-            {/* Left side - Logo and Main Heading */}
-            <div className="space-y-8 sm:w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
-              {/* Main Headline */}
+      <section className="bg-black text-white pt-8 pb-16">
+        <div className="w-full max-w-[2560px] mx-auto">
+          <div className="w-full">
+            {/* Main Headline */}
+            <div className="sm:w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
               <SplitText
                 text="Make your brand so clear, it becomes unforgettable."
-                className="text-2xl sm:text-5xl lg:text-7xl font-light leading-tight"
+                className="text-2xl sm:text-5xl lg:text-7xl font-light leading-tight text-white"
                 delay={100}
                 duration={0.6}
                 ease="power3.out"
@@ -555,21 +542,18 @@ const Home = () => {
                 rootMargin="-100px"
                 textAlign="left"
               />
-              {/* <h1 className="text-2xl sm:text-5xl lg:text-7xl font-light leading-tight">
-                Make your brand so clear, it becomes unforgettable.
-              </h1> */}
             </div>
 
-            {/* Right side - Company Description */}
-            <div className="flex flex-col lg:flex-row w-full gap-12 lg:gap-24 items-center lg:items-start relative overflow-hidden">
-              <div className="ml-[5%] px-4 sm:px-6 lg:px-8 w-1/2 flex flex-col-reverse sm:flex-col gap-12 sm:gap-0 w mt-12">
-                <div className="w-full sm:w- 1/2">
+            {/* Small portrait on left + Description text on right */}
+            <div className="sm:w-[90%] mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+              <div className="flex flex-col sm:flex-row items-start justify-between gap-8">
+                {/* Small portrait - left */}
+                <div className="flex-shrink-0">
                   <AnimatedContent
                     distance={150}
                     direction="horizontal"
                     reverse={false}
                     duration={1.2}
-                    // ease="bounce.out"
                     initialOpacity={0}
                     animateOpacity
                     scale={1.1}
@@ -579,18 +563,19 @@ const Home = () => {
                     <img
                       src={heroImage}
                       alt="Hero"
-                      className="w-full sm:w-[220px] h-auto mx-auto sm:mx-0"
+                      className="w-[120px] sm:w-[150px] h-auto rounded-sm"
                     />
                   </AnimatedContent>
                 </div>
-                <div className="w-full sm:w- 1/2 flex gap-4 mt-12">
+
+                {/* Two text columns - right side */}
+                <div className="flex gap-8 sm:gap-12 max-w-xl">
                   <div className="w-1/2">
                     <AnimatedContent
                       distance={150}
                       direction="horizontal"
                       reverse={false}
                       duration={1.2}
-                      // ease="bounce.out"
                       initialOpacity={0}
                       animateOpacity
                       scale={1.1}
@@ -598,10 +583,8 @@ const Home = () => {
                       delay={0.8}
                     >
                       <SplitText
-                        text="Marshall Haber Creative Group is an independent brand
-                      consultancy and creative partner to global leaders and
-                      ambitious founders."
-                        className="w-full text-sm sm:text-lg text-gray-300 leading-relaxed"
+                        text="Marshall Haber Creative Group is an independent brand consultancy and creative partner to global leaders and ambitious founders."
+                        className="w-full text-xs sm:text-sm text-gray-400 leading-relaxed"
                         delay={100}
                         duration={0.6}
                         direction={"vertical"}
@@ -614,8 +597,6 @@ const Home = () => {
                         textAlign="left"
                       />
                     </AnimatedContent>
-
-                    {/* <p className=""></p> */}
                   </div>
 
                   <div className="w-1/2">
@@ -624,7 +605,6 @@ const Home = () => {
                       direction="horizontal"
                       reverse={false}
                       duration={1.2}
-                      // ease="bounce.out"
                       initialOpacity={0}
                       animateOpacity
                       scale={1.1}
@@ -632,9 +612,8 @@ const Home = () => {
                       delay={1}
                     >
                       <SplitText
-                        text="We help businesses sharpen their positioning, elevate
-                      their identity, and build brands built to last."
-                        className="w-full text-sm sm:text-lg text-gray-300 leading-relaxed"
+                        text="We help businesses sharpen their positioning, elevate their identity, and build brands built to last."
+                        className="w-full text-xs sm:text-sm text-gray-400 leading-relaxed"
                         delay={100}
                         duration={0.6}
                         ease="power3.out"
@@ -646,114 +625,32 @@ const Home = () => {
                         textAlign="left"
                       />
                     </AnimatedContent>
-
-                    {/* <p className="w-full text-sm sm:text-lg text-gray-300 leading-relaxed">
-                      We help businesses sharpen their positioning, elevate
-                      their identity, and build brands built to last.
-                    </p> */}
                   </div>
                 </div>
-              </div>
-
-              <div
-                style={{
-                  width: "50%",
-                  height: "500px",
-                  position: "relative",
-                  translate: "0px, 10%",
-                }}
-              >
-                <CardSwap
-                  cardDistance={65}
-                  verticalDistance={85}
-                  delay={3500}
-                  pauseOnHover={false}
-                >
-                  <Card>
-                    <h3 className="flex gap-2 items-center ml-2 py-2 font-semibold border-b">
-                      <CodeXml />
-                      Smooth
-                    </h3>
-                    <img
-                      src={card1}
-                      alt="Hero"
-                      className="h-full w-full object-cover"
-                    />
-                  </Card>
-                  <Card>
-                    <h3 className="flex gap-2 items-center ml-2 py-2 font-semibold border-b">
-                      <CodeXml />
-                      Smooth
-                    </h3>
-                    <img
-                      src={card2}
-                      alt="Hero"
-                      className="h-full w-full object-cover"
-                    />
-                  </Card>
-                  <Card>
-                    <h3 className="flex gap-2 items-center ml-2 py-2 font-semibold border-b">
-                      <CodeXml />
-                      Smooth
-                    </h3>
-                    <img
-                      src={card3}
-                      alt="Hero"
-                      className="h-full w-full object-cover"
-                    />
-                  </Card>
-                </CardSwap>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-white pt-2 pb- 20 relative z-10 sm:mt- [750px]">
-        {/* Bottom Message Section */}
-        <div
-          style={{ height: "100px", position: "relative", overflow: "hidden" }}
-        >
-          <LogoLoop
-            logos={techLogos}
-            speed={60}
-            direction="left"
-            logoHeight={24}
-            gap={80}
-            pauseOnHover
-            scaleOnHover
-            fadeOut
-            fadeOutColor="#ffffff"
-            ariaLabel="Technology partners"
+      {/* Large Hero Portrait */}
+      <section className="bg-white pt-16 pb-4">
+        <div className="flex justify-center px-8">
+          <img
+            src={heroImage}
+            alt="Marshall Haber Creative Group"
+            className="w-full max-w-4xl rounded-2xl object-cover"
+            style={{ maxHeight: "500px" }}
           />
         </div>
-        <section className="bg-white py-24 relative z-10">
-          <div className="flex justify-center">
-            <Magnet padding={50} disabled={false} magnetStrength={10}>
-              <TiltedCard
-                imageSrc={heroImage}
-                altText="Marshall Haber Creative Group"
-                captionText="Marshall Haber Creative Group"
-                containerHeight="400px"
-                containerWidth="800px"
-                imageHeight="400px"
-                imageWidth="800px"
-                rotateAmplitude={12}
-                scaleOnHover={1}
-                showMobileWarning={false}
-                showTooltip={true}
-                displayOverlayContent={true}
-                // overlayContent={
-                //   <img src={heroImage} alt="Hero" className="w- [220px]" />
-                // }
-              />
-            </Magnet>
-          </div>
+      </section>
+
+      <section className="bg-white relative z-10">
+        <section className="bg-white py-8 relative z-10">
           <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
             <SplitText
-              text="We empower our clients and deliver uncompromising results backed by
-            personal commitment to their success."
-              className="mt-10 text-2xl lg:text-3xl text-[#202020] font-medium"
+              text="We empower our clients and deliver uncompromising results backed by personal commitment to their success."
+              className="text-2xl lg:text-3xl text-[#202020] font-medium"
               delay={100}
               duration={0.6}
               ease="power3.out"
@@ -764,25 +661,14 @@ const Home = () => {
               rootMargin="-100px"
               textAlign="center"
             />
-            {/* <p className="mt-10 text-2xl lg:text-3xl text-[#202020] font-medium">
-            We empower our clients and deliver uncompromising results backed by
-            personal commitment to their success.
-          </p> */}
           </div>
         </section>
 
-        {/* Optional CTA Section */}
-        <section className="bg-black text- white pt- 12">
-          <div
-            style={{ height: "600px", position: "relative" }}
-            className="border-y -2 border-t-black border-b-white"
-          >
-            <FlowingMenu items={demoItems} />
-          </div>
-
+        {/* Client Logos & Projects Section */}
+        <section className="bg-white pt-12">
           {/* Logo Grid */}
-          {/* <div className="w-[90%] mx-auto">
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-16">
+          <div className="w-[90%] mx-auto">
+            <div className="grid grid-cols-3 sm:grid-cols-5 gap-6 mb-16">
               {clientLogos.map((logo, index) => (
                 <div
                   key={index}
@@ -805,16 +691,16 @@ const Home = () => {
             </div>
 
             <div className="text-center mt-4 font-serif">
-              <h2 className="text-[#202020] text-5xl md:text-6xl lg:text-7xl font-light leading- tight mb- 8">
+              <h2 className="text-[#202020] text-5xl md:text-6xl lg:text-7xl font-light leading-tight mb-2">
                 We work with brands that
               </h2>
-              <h3 className="text-[#707070] text-5xl md:text-6xl lg:text-7xl font-light leading-tight mb-12">
+              <h3 className="text-[#707070] text-5xl md:text-6xl lg:text-7xl font-light leading-tight mb-6">
                 want to lead
                 <em className="text-[#202020] italic">, not follow</em>.
               </h3>
             </div>
 
-            <div className="text-center  font-serif">
+            <div className="text-center font-serif">
               <button className="text-[#202020] text-lg hover:text-gray-600 transition-colors duration-300 flex flex-col items-center justify-center mx-auto group">
                 See latest projects
                 <svg
@@ -832,48 +718,74 @@ const Home = () => {
                 </svg>
               </button>
             </div>
-          </div> */}
-          <div className="text-center mt-16 mb-12">
-            <h2 className="text-[#707070] text-5xl md:text-6xl lg:text-7xl font-light leading- tight mb- 8">
-              We work with brands that
-            </h2>
-            <h3 className="text-white [#707070] text-5xl md:text-6xl lg:text-7xl font-light leading-tight mb-12">
-              want to lead
-              <em className="text-[#707070] italic">, not follow.</em>
-            </h3>
           </div>
 
-          <div style={{ height: "600px", position: "relative" }}>
-            <InfiniteScroll
-              items={items}
-              isTilted={true}
-              tiltDirection="left"
-              autoplay={true}
-              autoplaySpeed={0.2}
-              autoplayDirection="up"
-              pauseOnHover={true}
-            />
-          </div>
+          <div className="mt-12 space-y-8 px-6 sm:px-10 lg:px-16">
+            {/* Row 1: 2 columns */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {cardData.slice(0, 2).map((card, i) => (
+                <div key={i} className="group cursor-pointer">
+                  <div className="bg-[#F0F0F0] rounded-xl overflow-hidden aspect-[4/3]">
+                    <img src={card.image} alt={card.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  </div>
+                  <h4 className="mt-3 text-[15px] font-semibold text-[#202020]">{card.title}</h4>
+                  <p className="text-[13px] text-gray-400">{card.label}</p>
+                </div>
+              ))}
+            </div>
 
-          {/* <div className=" mt- 12">
-            <MagicBento
-              className="w-full "
-              cardData={cardData}
-              textAutoHide={true}
-              enableStars={true}
-              enableSpotlight={true}
-              enableBorderGlow={true}
-              enableTilt={false}
-              enableMagnetism={false}
-              clickEffect={true}
-              spotlightRadius={1000}
-              particleCount={20}
-              glowColor="256, 256, 256"
-            />
-          </div> */}
-          {/* <div className="mt-20">
-            <Work isHome={true} />
-          </div> */}
+            {/* Row 2: 2 columns */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {[cardData[2], cardData[7]].map((card, i) => (
+                <div key={i} className="group cursor-pointer">
+                  <div className="bg-[#F0F0F0] rounded-xl overflow-hidden aspect-[4/3]">
+                    <img src={card.image} alt={card.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  </div>
+                  <h4 className="mt-3 text-[15px] font-semibold text-[#202020]">{card.title}</h4>
+                  <p className="text-[13px] text-gray-400">{card.label}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Row 3: 3 columns */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              {[cardData[3], cardData[4], cardData[5]].map((card, i) => (
+                <div key={i} className="group cursor-pointer">
+                  <div className="bg-[#F0F0F0] rounded-xl overflow-hidden aspect-[4/3]">
+                    <img src={card.image} alt={card.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  </div>
+                  <h4 className="mt-3 text-[15px] font-semibold text-[#202020]">{card.title}</h4>
+                  <p className="text-[13px] text-gray-400">{card.label}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Row 4: 3 columns */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              {[cardData[6], cardData[8], cardData[9]].map((card, i) => (
+                <div key={i} className="group cursor-pointer">
+                  <div className="bg-[#F0F0F0] rounded-xl overflow-hidden aspect-[4/3]">
+                    <img src={card.image} alt={card.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  </div>
+                  <h4 className="mt-3 text-[15px] font-semibold text-[#202020]">{card.title}</h4>
+                  <p className="text-[13px] text-gray-400">{card.label}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Row 5: 3 columns */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              {[cardData[10], cardData[11], cardData[12]].map((card, i) => (
+                <div key={i} className="group cursor-pointer">
+                  <div className="bg-[#F0F0F0] rounded-xl overflow-hidden aspect-[4/3]">
+                    <img src={card.image} alt={card.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  </div>
+                  <h4 className="mt-3 text-[15px] font-semibold text-[#202020]">{card.title}</h4>
+                  <p className="text-[13px] text-gray-400">{card.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
         <section className="mt-16 overflow-hi dden">
           <div className="overflow-hidden pb-2">

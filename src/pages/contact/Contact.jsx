@@ -3,225 +3,184 @@ import React, { useState } from "react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
-    title: "",
-    company: "",
-    city: "",
-    state: "",
-    country: "",
-    industry: "",
-    howDidYouHear: "",
-    challenges: "",
+    phone: "",
+    message: "",
+    updates: false,
+    privacy: false,
   });
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, type, checked } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: value,
+      [name]: type === "checkbox" ? checked : value,
     }));
   };
 
   const handleSubmit = () => {
     console.log("Form submitted:", formData);
-    // Handle form submission here
   };
+
   return (
     <div className="mt-20 md:mt-[88px] min-h-screen bg-white">
-      {/* Header Section */}
-      <div className="bg-black text-white py-16 px-6">
-        <div className="max-w- 4xl mx-auto text-center">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-light leading-tight">
-            We Partner With Ambitious Founders With A Clear
-            <br />
-            Vision And A Deep Understanding Of Their Customer
-          </h1>
-        </div>
+      {/* Hero Section */}
+      <div className="w-[90%] mx-auto pt-12 pb-8">
+        <p className="text-[#202020] text-lg md:text-xl lg:text-2xl font-light leading-relaxed max-w-lg">
+          We Partner With Ambitious Founders
+          <br />
+          With A Clear Vision And A Deep
+          <br />
+          Understanding Of Their Customer
+        </p>
+        <h2 className="text-[#202020] text-3xl md:text-4xl lg:text-5xl font-bold mt-4">
+          212.494.9052
+        </h2>
+        <p className="text-[#202020] text-xl md:text-2xl lg:text-3xl font-medium mt-4 tracking-wide">
+          New York &nbsp;·&nbsp; Toronto &nbsp;·&nbsp; Florida
+        </p>
       </div>
 
-      {/* Contact Info */}
-      <div className="py-12 px-6">
-        <div className="max-w-4xl text-[#202020] mx-auto text-center font-bold">
-          <div className="mb-8">
-            <p className="text-lg mb-2">+1 (212) 494 9052</p>
-            <p className=" ">99 Wall Street +1467</p>
-            <p className=" ">New York, NY 10005</p>
+      {/* Divider */}
+      <div className="w-[90%] mx-auto border-t border-[#DCDCDC]" />
+
+      {/* Centered Form Section */}
+      <div className="w-[90%] max-w-2xl mx-auto py-16">
+        <h2 className="text-3xl md:text-4xl font-semibold text-[#1a1a2e] mb-4">
+          Want to work with us?
+        </h2>
+        <p className="text-gray-600 text-sm leading-relaxed mb-10">
+          Let us know a bit about you and your business idea, challenge, or
+          needs by filling out this form. You can also write us at{" "}
+          <a
+            href="mailto:newbiz@marshallhaber.com"
+            className="text-[#1a1a2e] underline hover:text-black"
+          >
+            newbiz@marshallhaber.com
+          </a>
+          .
+        </p>
+
+        <div className="space-y-6">
+          {/* First + Last Name */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <input
+              type="text"
+              name="firstName"
+              placeholder="First name*"
+              value={formData.firstName}
+              onChange={handleInputChange}
+              required
+              className="w-full px-4 py-4 border border-gray-300 rounded-sm bg-white focus:border-[#1a1a2e] focus:outline-none text-sm text-gray-700 placeholder-gray-400 transition-colors"
+            />
+            <input
+              type="text"
+              name="lastName"
+              placeholder="Last name*"
+              value={formData.lastName}
+              onChange={handleInputChange}
+              required
+              className="w-full px-4 py-4 border border-gray-300 rounded-sm bg-white focus:border-[#1a1a2e] focus:outline-none text-sm text-gray-700 placeholder-gray-400 transition-colors"
+            />
           </div>
-        </div>
-      </div>
 
-      {/* Form Section */}
-      <div className="py-16 px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="space-y-8">
-            {/* Row 1 */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  className="w-full p-4 border-b-2 border-gray-200 bg-transparent focus:border-[#707070] focus:outline-none text-gray-700 placeholder-[#707070] transition-colors"
-                />
-              </div>
-              <div>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  className="w-full p-4 border-b-2 border-gray-200 bg-transparent focus:border-[#707070] focus:outline-none text-gray-700 placeholder-[#707070] transition-colors"
-                />
-              </div>
-            </div>
+          {/* Email + Phone */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <input
+              type="email"
+              name="email"
+              placeholder="Work email*"
+              value={formData.email}
+              onChange={handleInputChange}
+              required
+              className="w-full px-4 py-4 border border-gray-300 rounded-sm bg-white focus:border-[#1a1a2e] focus:outline-none text-sm text-gray-700 placeholder-gray-400 transition-colors"
+            />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Phone number"
+              value={formData.phone}
+              onChange={handleInputChange}
+              className="w-full px-4 py-4 border border-gray-300 rounded-sm bg-white focus:border-[#1a1a2e] focus:outline-none text-sm text-gray-700 placeholder-gray-400 transition-colors"
+            />
+          </div>
 
-            {/* Row 2 */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <input
-                  type="text"
-                  name="title"
-                  placeholder="Title"
-                  value={formData.title}
-                  onChange={handleInputChange}
-                  className="w-full p-4 border-b-2 border-gray-200 bg-transparent focus:border-[#707070] focus:outline-none text-gray-700 placeholder-[#707070] transition-colors"
-                />
-              </div>
-              <div>
-                <input
-                  type="text"
-                  name="company"
-                  placeholder="Company"
-                  value={formData.company}
-                  onChange={handleInputChange}
-                  className="w-full p-4 border-b-2 border-gray-200 bg-transparent focus:border-[#707070] focus:outline-none text-gray-700 placeholder-[#707070] transition-colors"
-                />
-              </div>
-            </div>
+          {/* Message */}
+          <textarea
+            name="message"
+            placeholder="Message*"
+            value={formData.message}
+            onChange={handleInputChange}
+            required
+            rows="5"
+            className="w-full px-4 py-4 border border-gray-300 rounded-sm bg-white focus:border-[#1a1a2e] focus:outline-none text-sm text-gray-700 placeholder-gray-400 resize-none transition-colors"
+          />
 
-            {/* Row 3 */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <input
-                  type="text"
-                  name="city"
-                  placeholder="City"
-                  value={formData.city}
-                  onChange={handleInputChange}
-                  className="w-full p-4 border-b-2 border-gray-200 bg-transparent focus:border-[#707070] focus:outline-none text-gray-700 placeholder-[#707070] transition-colors"
-                />
-              </div>
-              <div>
-                <input
-                  type="text"
-                  name="state"
-                  placeholder="State"
-                  value={formData.state}
-                  onChange={handleInputChange}
-                  className="w-full p-4 border-b-2 border-gray-200 bg-transparent focus:border-[#707070] focus:outline-none text-gray-700 placeholder-[#707070] transition-colors"
-                />
-              </div>
-            </div>
-
-            {/* Row 4 */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <input
-                  type="text"
-                  name="country"
-                  placeholder="Country"
-                  value={formData.country}
-                  onChange={handleInputChange}
-                  className="w-full p-4 border-b-2 border-gray-200 bg-transparent focus:border-[#707070] focus:outline-none text-gray-700 placeholder-[#707070] transition-colors"
-                />
-              </div>
-              <div>
-                <input
-                  type="text"
-                  name="industry"
-                  placeholder="Industry"
-                  value={formData.industry}
-                  onChange={handleInputChange}
-                  className="w-full p-4 border-b-2 border-gray-200 bg-transparent focus:border-[#707070] focus:outline-none text-gray-700 placeholder-[#707070] transition-colors"
-                />
-              </div>
-            </div>
-
-            {/* Full width fields */}
-            <div>
+          {/* Checkboxes */}
+          <div className="space-y-3">
+            <label className="flex items-start gap-3 cursor-pointer">
               <input
-                type="text"
-                name="howDidYouHear"
-                placeholder="How did you hear about us?"
-                value={formData.howDidYouHear}
+                type="checkbox"
+                name="updates"
+                checked={formData.updates}
                 onChange={handleInputChange}
-                className="w-full p-4 border-b-2 border-gray-200 bg-transparent focus:border-[#707070] focus:outline-none text-gray-700 placeholder-[#707070] transition-colors"
+                className="mt-1 w-4 h-4 border-gray-300 rounded accent-[#1a1a2e]"
               />
-            </div>
-
-            <div>
-              <textarea
-                name="challenges"
-                placeholder="What challenges are you facing?"
-                value={formData.challenges}
+              <span className="text-xs text-gray-600">
+                Send me occasional updates on Marshall Haber's events, insights, and services
+              </span>
+            </label>
+            <label className="flex items-start gap-3 cursor-pointer">
+              <input
+                type="checkbox"
+                name="privacy"
+                checked={formData.privacy}
                 onChange={handleInputChange}
-                rows="4"
-                className="w-full p-4 border-b-2 border-gray-200 bg-transparent focus:border-[#707070] focus:outline-none text-gray-700 placeholder-[#707070] resize-none transition-colors"
+                className="mt-1 w-4 h-4 border-gray-300 rounded accent-[#1a1a2e]"
               />
-            </div>
+              <span className="text-xs text-gray-600">
+                By submitting this form, I agree to Marshall Haber's{" "}
+                <a href="#" className="underline hover:text-black">
+                  privacy policy
+                </a>
+              </span>
+            </label>
+          </div>
 
-            {/* Submit Button */}
-            <div className="pt-8">
-              <button
-                type="button"
-                onClick={handleSubmit}
-                className="bg-black text-white px-8 py-3 rounded-sm hover:bg-gray-800 transition-colors font-medium"
-              >
-                Send Message
-              </button>
-            </div>
+          {/* Submit */}
+          <div className="pt-2">
+            <button
+              type="button"
+              onClick={handleSubmit}
+              className="bg-[#1a1a2e] text-white px-6 py-3 text-sm rounded-full hover:bg-black transition-colors duration-300"
+            >
+              Send message
+            </button>
           </div>
         </div>
       </div>
 
-      {/* Social Section */}
-      <div className="py-16 px-6 bg-gray-50">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-light text-center mb-12 text-gray-800">
-            SOCIAL
-          </h2>
-          <div className="flex justify-center space-x-6">
-            <a
-              href="#"
-              className="flex items-center space-x-2 bg-white px-6 py-3 rounded-sm shadow-sm hover:shadow-md transition-shadow"
-            >
-              <Instagram size={20} className="text-gray-600" />
-              <span className="text-gray-600">Instagram</span>
+      {/* Contact Info + Social Footer */}
+      <div className="w-[90%] mx-auto border-t border-[#DCDCDC] py-10">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+          <div className="text-sm text-gray-500">
+            <p>99 Wall Street +1467, New York, NY 10005</p>
+            <p>+1 (212) 494 9052</p>
+          </div>
+          <div className="flex space-x-4">
+            <a href="#" className="text-gray-400 hover:text-black transition-colors duration-300">
+              <Instagram size={18} />
             </a>
-            <a
-              href="#"
-              className="flex items-center space-x-2 bg-white px-6 py-3 rounded-sm shadow-sm hover:shadow-md transition-shadow"
-            >
-              <Facebook size={20} className="text-gray-600" />
-              <span className="text-gray-600">Facebook</span>
+            <a href="#" className="text-gray-400 hover:text-black transition-colors duration-300">
+              <Facebook size={18} />
             </a>
-            <a
-              href="#"
-              className="flex items-center space-x-2 bg-white px-6 py-3 rounded-sm shadow-sm hover:shadow-md transition-shadow"
-            >
-              <Youtube size={20} className="text-gray-600" />
-              <span className="text-gray-600">YouTube</span>
+            <a href="#" className="text-gray-400 hover:text-black transition-colors duration-300">
+              <Linkedin size={18} />
             </a>
-            <a
-              href="#"
-              className="flex items-center space-x-2 bg-white px-6 py-3 rounded-sm shadow-sm hover:shadow-md transition-shadow"
-            >
-              <Linkedin size={20} className="text-gray-600" />
-              <span className="text-gray-600">LinkedIn</span>
+            <a href="#" className="text-gray-400 hover:text-black transition-colors duration-300">
+              <Youtube size={18} />
             </a>
           </div>
         </div>

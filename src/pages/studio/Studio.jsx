@@ -46,7 +46,6 @@ const Studio = () => {
     );
 
     return {
-      // transform: `translateY(${progress * 20}px) scale(${1 - progress * 0.05})`,
       zIndex: index + 1,
       position: "sticky",
       top: `${100 + index * 20}px`,
@@ -66,8 +65,8 @@ const Studio = () => {
         </div>
       </div>
       <div className="mt-18">
-        <div className="text-center text-[#707070]   text-2xl md:text-3xl lg:text-4xl px-4 md:px-0  md:w-[40%] mx-auto">
-          <h2 className="font-l ight">
+        <div className="text-center text-[#707070] text-2xl md:text-3xl lg:text-4xl px-4 md:px-0 md:w-[40%] mx-auto">
+          <h2 className="font-light">
             <span className="text-[#202020] italic"> Marshall Haber </span>{" "}
             founded his studio with one goal: to bring{" "}
             <span className="text-[#202020] italic">sharp thinking</span> and{" "}
@@ -88,7 +87,7 @@ const Studio = () => {
         {cards.map((card, index) => (
           <div
             key={card.id}
-            className="w-full h- screen px-4 md:px-8 lg:px-0 16 drop-shadow-xl"
+            className="w-full h-screen px-4 md:px-8 lg:px-16 drop-shadow-xl"
             style={getCardStyle(index)}
           >
             <div
@@ -135,14 +134,11 @@ const Studio = () => {
               {/* Right Image Section */}
               <div className="flex-1 h-full p-8 flex items-center justify-center">
                 <div className="relative w-full max-w-lg">
-                  {/* Replace 'your-image-path.jpg' with your actual image paths */}
-
-                  {/* Fallback placeholder if you don't have images yet */}
-                  <div className="absolute inset-0  rounded-lg flex items-center justify-center backdrop-blur-sm">
+                  <div className="absolute inset-0 rounded-lg flex items-center justify-center backdrop-blur-sm">
                     <img
                       src={mock1}
                       alt="Mockup"
-                      className="w-full 1/2 h-auto"
+                      className="w-full h-auto"
                     />
                   </div>
                 </div>

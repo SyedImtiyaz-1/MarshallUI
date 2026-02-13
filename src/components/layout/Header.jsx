@@ -52,9 +52,8 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed z-50 w-full top-0 left-0 bg-white transition-all duration-500 ease-in-out ${
-        isScrolled ? "drop-shadow-lg backdrop-blur-sm" : "drop-shadow-none"
-      }`}
+      className={`fixed z-50 w-full top-0 left-0 bg-white transition-all duration-500 ease-in-out ${isScrolled ? "drop-shadow-lg backdrop-blur-sm" : "drop-shadow-none"
+        }`}
     >
       {/* Desktop Header */}
       <div className="hidden w-[90%] mx-auto md:flex items-center justify-between px-6 py-4">
@@ -66,47 +65,57 @@ const Header = () => {
           <img
             src={bigLogo} // Conditionally render the logo
             alt="Logo"
-            className={`absolute left-0 top-0 size-14 w-auto transition-all duration-300 ${
-              logoVisible ? "opacity-0" : "opacity-100"
-            }`} // Fade effect
+            className={`absolute left-0 top-0 size-14 w-auto transition-all duration-300 ${logoVisible ? "opacity-0" : "opacity-100"
+              }`} // Fade effect
             style={{ transition: "opacity 0.3s ease-in-out" }}
           />
           <img
             src={logo} // Conditionally render the logo
             alt="Logo"
-            className={`size-14 w-auto transition-all duration-300 ${
-              logoVisible ? "opacity-100" : "opacity-0"
-            }`} // Fade effect
+            className={`size-14 w-auto transition-all duration-300 ${logoVisible ? "opacity-100" : "opacity-0"
+              }`} // Fade effect
             style={{ transition: "opacity 0.3s ease-in-out" }}
           />
         </Link>
 
-        <div className="flex items-center justify-end space-x-2 w-full realtive">
+        <div className="flex items-center justify-end space-x-2 w-full">
           {/* Navigation Links */}
-          <PillNav
-            // logo={logo}
-            // logoAlt="Company Logo"
-            items={[
-              { label: "Work", href: "/work" },
-              { label: "Studio", href: "/studio" },
-              { label: "Clients", href: "/clients" },
-              { label: "Contact", href: "/contact" },
-            ]}
-            activeHref="/"
-            className="flex items-center space-x-14 text-lg mt-2 "
-            ease="power2.easeOut"
-            baseColor="#000000"
-            pillColor="#ffffff"
-            hoveredPillTextColor="#ffffff"
-            pillTextColor="#000000"
-            initialLoadAnimation={false}
-          />
+          <nav className="flex items-center space-x-10 text-[15px] tracking-wide">
+            <Link
+              to="/work"
+              className="text-gray-800 hover:text-black transition-colors duration-300 relative group"
+            >
+              Work
+              <span className="absolute bottom-[-2px] left-0 w-0 h-[1px] bg-black transition-all duration-300 group-hover:w-full"></span>
+            </Link>
+            <Link
+              to="/about"
+              className="text-gray-800 hover:text-black transition-colors duration-300 relative group"
+            >
+              About
+              <span className="absolute bottom-[-2px] left-0 w-0 h-[1px] bg-black transition-all duration-300 group-hover:w-full"></span>
+            </Link>
+            <Link
+              to="/clients"
+              className="text-gray-800 hover:text-black transition-colors duration-300 relative group"
+            >
+              Clients
+              <span className="absolute bottom-[-2px] left-0 w-0 h-[1px] bg-black transition-all duration-300 group-hover:w-full"></span>
+            </Link>
+            <Link
+              to="/contact"
+              className="text-gray-800 hover:text-black transition-colors duration-300 relative group"
+            >
+              Contact
+              <span className="absolute bottom-[-2px] left-0 w-0 h-[1px] bg-black transition-all duration-300 group-hover:w-full"></span>
+            </Link>
+          </nav>
 
           {/* Search Icon */}
-          <button className="group flex-shrink-0 border-black border-2 p-1.5 2 hover:bg-black grad ient-to-br from-b lue-50 to-pur ple-50 rounded-full transition-all duration-300 transform group-hover:scale-125 group-hover:rotate-12 group-hover:shadow-lg active:scale-90">
+          <button className="ml-6 p-2 hover:bg-gray-100 rounded-full transition-all duration-300">
             <Search
-              size={22}
-              className="group-hover:text-white text-gray-700 duration-300  group-hover:drop-shadow-lg"
+              size={20}
+              className="text-gray-700 hover:text-black duration-300"
             />
           </button>
 
@@ -165,17 +174,15 @@ const Header = () => {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300 md:hidden ${
-          isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
-        }`}
+        className={`fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300 md:hidden ${isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+          }`}
         onClick={toggleMenu}
       />
 
       {/* Mobile Menu */}
       <div
-        className={`fixed top-0 right-0 w-full h-screen bg-white z-50 transform transition-transform duration-300 ease-in-out md:hidden ${
-          isMenuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed top-0 right-0 w-full h-screen bg-white z-50 transform transition-transform duration-300 ease-in-out md:hidden ${isMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
       >
         {/* Menu Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
@@ -199,11 +206,11 @@ const Header = () => {
               Work
             </a>
             <a
-              href="/studio"
+              href="/about"
               className="block text-gray-700 hover:text-black hover:bg-gray-50 transition-all py-4 border-b border-[#DCDCDC] text-center roun ded-lg transform hover:translate-x-2"
               onClick={() => setIsMenuOpen(false)}
             >
-              Studio
+              About
             </a>
             <a
               href="/clients"

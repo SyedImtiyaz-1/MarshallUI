@@ -18,7 +18,6 @@ import specialLogo from "../../assets/home/brands/special.png";
 import stoneridgeLogo from "../../assets/home/brands/stoneridge.png";
 import trishLogo from "../../assets/home/brands/trish.png";
 import yrLogo from "../../assets/home/brands/y&r.png";
-import Work from "../../pages/work/Work";
 
 const Clients = () => {
   const settings = {
@@ -105,103 +104,50 @@ const Clients = () => {
     },
   ];
 
-  const clientLogos = [
+  // Existing client logos with images
+  const clientLogosWithImages = [
     { name: "J.P.Morgan", src: jpLogo, alt: "J.P.Morgan" },
-    {
-      name: "Hotel on Rivington",
-      src: rivingtonLogo,
-      alt: "Hotel on Rivington",
-    },
+    { name: "Hotel on Rivington", src: rivingtonLogo, alt: "Hotel on Rivington" },
     { name: "Centerbridge", src: centerbridgeLogo, alt: "Centerbridge" },
     { name: "Special Olympics", src: specialLogo, alt: "Special Olympics" },
     { name: "Trish McEvoy", src: trishLogo, alt: "Trish McEvoy" },
-    {
-      name: "Memorial Sloan Kettering",
-      src: memorialLogo,
-      alt: "Memorial Sloan Kettering Cancer Center",
-    },
+    { name: "Memorial Sloan Kettering", src: memorialLogo, alt: "Memorial Sloan Kettering Cancer Center" },
     { name: "Y&R", src: yrLogo, alt: "Y&R" },
     { name: "Eurotech", src: eurotechLogo, alt: "Eurotech" },
-    {
-      name: "National Jewish Health",
-      src: healthLogo,
-      alt: "National Jewish Health",
-    },
+    { name: "National Jewish Health", src: healthLogo, alt: "National Jewish Health" },
     { name: "South Africa", src: southafricaLogo, alt: "South Africa" },
     { name: "Burson-Marsteller", src: bursonLogo, alt: "Burson-Marsteller" },
     { name: "Stone Ridge", src: stoneridgeLogo, alt: "Stone Ridge" },
     { name: "Celadon", src: oeladonLogo, alt: "Celadon" },
     { name: "Mizrahi", src: mizrahiLogo, alt: "Mizrahi" },
-    {
-      name: "Hertz Investment Group",
-      src: hertzLogo,
-      alt: "Hertz Investment Group",
-    },
-    { name: "J.P.Morgan", src: jpLogo, alt: "J.P.Morgan" },
-    {
-      name: "Hotel on Rivington",
-      src: rivingtonLogo,
-      alt: "Hotel on Rivington",
-    },
-    { name: "Centerbridge", src: centerbridgeLogo, alt: "Centerbridge" },
-    { name: "Special Olympics", src: specialLogo, alt: "Special Olympics" },
-    { name: "Trish McEvoy", src: trishLogo, alt: "Trish McEvoy" },
-    {
-      name: "Memorial Sloan Kettering",
-      src: memorialLogo,
-      alt: "Memorial Sloan Kettering Cancer Center",
-    },
-    { name: "Y&R", src: yrLogo, alt: "Y&R" },
-    { name: "Eurotech", src: eurotechLogo, alt: "Eurotech" },
-    {
-      name: "National Jewish Health",
-      src: healthLogo,
-      alt: "National Jewish Health",
-    },
-    { name: "South Africa", src: southafricaLogo, alt: "South Africa" },
-    { name: "Burson-Marsteller", src: bursonLogo, alt: "Burson-Marsteller" },
-    { name: "Stone Ridge", src: stoneridgeLogo, alt: "Stone Ridge" },
-    { name: "Celadon", src: oeladonLogo, alt: "Celadon" },
-    { name: "Mizrahi", src: mizrahiLogo, alt: "Mizrahi" },
-    {
-      name: "Hertz Investment Group",
-      src: hertzLogo,
-      alt: "Hertz Investment Group",
-    },
-    { name: "J.P.Morgan", src: jpLogo, alt: "J.P.Morgan" },
-    {
-      name: "Hotel on Rivington",
-      src: rivingtonLogo,
-      alt: "Hotel on Rivington",
-    },
-    { name: "Centerbridge", src: centerbridgeLogo, alt: "Centerbridge" },
-    { name: "Special Olympics", src: specialLogo, alt: "Special Olympics" },
-    { name: "Trish McEvoy", src: trishLogo, alt: "Trish McEvoy" },
-    {
-      name: "Memorial Sloan Kettering",
-      src: memorialLogo,
-      alt: "Memorial Sloan Kettering Cancer Center",
-    },
-    { name: "Y&R", src: yrLogo, alt: "Y&R" },
-    { name: "Eurotech", src: eurotechLogo, alt: "Eurotech" },
-    {
-      name: "National Jewish Health",
-      src: healthLogo,
-      alt: "National Jewish Health",
-    },
-    { name: "South Africa", src: southafricaLogo, alt: "South Africa" },
-    { name: "Burson-Marsteller", src: bursonLogo, alt: "Burson-Marsteller" },
-    { name: "Stone Ridge", src: stoneridgeLogo, alt: "Stone Ridge" },
-    { name: "Celadon", src: oeladonLogo, alt: "Celadon" },
-    { name: "Mizrahi", src: mizrahiLogo, alt: "Mizrahi" },
+    { name: "Hertz Investment Group", src: hertzLogo, alt: "Hertz Investment Group" },
+  ];
+
+  // New text-only client logos
+  const newClientLogos = [
+    { name: "PepsiCo", textStyle: "font-bold text-lg text-blue-800" },
+    { name: "Meta", textStyle: "font-bold text-xl text-blue-600" },
+    { name: "amazon", textStyle: "font-bold text-2xl text-gray-800 lowercase" },
+    { name: "AIG", textStyle: "font-bold text-xl text-blue-700 border border-blue-700 px-3 py-1" },
+    { name: "AT&T", textStyle: "font-bold text-xl text-blue-500" },
+    { name: "Takeda", textStyle: "font-semibold text-xl text-red-600 italic" },
+    { name: "Bank of America", textStyle: "font-bold text-sm text-red-700 uppercase tracking-wider" },
+    { name: "BlackRock", textStyle: "font-bold text-xl text-gray-900" },
+    { name: "Prudential", textStyle: "font-semibold text-lg text-gray-700" },
+    { name: "Kilpatrick", textStyle: "font-semibold text-lg text-gray-800" },
+    { name: "McKesson", textStyle: "font-bold text-xl text-blue-900 uppercase tracking-wide" },
+    { name: "Fried Frank", textStyle: "font-bold text-lg text-gray-900" },
+    { name: "Franklin Templeton", textStyle: "font-semibold text-sm text-gray-700" },
+    { name: "Intuit", textStyle: "font-bold text-2xl text-gray-900" },
+    { name: "International Paper", textStyle: "font-semibold text-sm text-blue-800" },
   ];
 
   return (
-    <div className="mt-20 md:mt-[88px] min-h-screen bg-white text-black overflow- x-hidden pb-32">
+    <div className="mt-20 md:mt-[88px] min-h-screen bg-white text-black overflow-x-hidden pb-32">
       {/* Header Section */}
       <div className="bg-white text-[#202020] py-16 px-6 mt-4">
-        <div className="max-w- 4xl mx-auto text-center">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-xl md:text-2xl lg:text-3xl font-semibold leading-tight">
             We Use Design And Strategy To Empower Our Clients And
             <br /> Create Impactful Results For Their High-Profile And Complex
             <br /> Business Challenges.
@@ -209,38 +155,9 @@ const Clients = () => {
         </div>
       </div>
 
-      <div className="w-[90%] mx-auto mt-4">
-        <div className="text-xl text-[#202020] font-semibold pb-2 border-b border-[#DCDCDC] ">
-          COMPANIES
-        </div>
-        {/* Logo Grid */}
-        <div className="grid gird-cols-2 md:grid-cols-4 gap-6 mb-16 mt-6 border-b border-[#DCDCDC] pb-20">
-          {clientLogos.map((logo, index) => (
-            <div
-              key={index}
-              className="rounded-lg p-6 flex items-center justify-center h-44 hover:bg-gray-200 bg-[#F2F2F2] transition-colors duration-300"
-            >
-              <img
-                src={logo.src}
-                alt={logo.alt}
-                className="max-w-full max-h-full object-contain hover:grayscale-0 transition-all duration-300"
-                onError={(e) => {
-                  // Fallback to text if image fails to load
-                  e.target.style.display = "none";
-                  e.target.nextSibling.style.display = "block";
-                }}
-              />
-              <span className="text-gray-600 text-sm font-medium text-center hidden">
-                {logo.name}
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Carousel Section */}
-      <div className="py-4 w-full max-w-[95vw] 7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 ">
-        <style jsx>{`
+      {/* Carousel Section - NOW ON TOP */}
+      <div className="py-4 w-full max-w-[95vw] mx-auto px-4 sm:px-6 lg:px-8">
+        <style>{`
           .slick-slide {
             padding: 0 8px;
           }
@@ -347,6 +264,48 @@ const Clients = () => {
             </div>
           ))}
         </Slider>
+      </div>
+
+      {/* COMPANIES Logo Grid - NOW BELOW CAROUSEL */}
+      <div className="w-[90%] mx-auto mt-20">
+        <div className="text-xl text-[#202020] font-semibold pb-2 border-b border-[#DCDCDC]">
+          COMPANIES
+        </div>
+
+        {/* Existing logos with images */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mt-6">
+          {clientLogosWithImages.map((logo, index) => (
+            <div
+              key={`img-${index}`}
+              className="rounded-lg p-6 flex items-center justify-center h-28 hover:bg-gray-200 bg-[#F2F2F2] transition-colors duration-300"
+            >
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                className="max-w-full max-h-full object-contain hover:grayscale-0 transition-all duration-300"
+                onError={(e) => {
+                  e.target.style.display = "none";
+                  e.target.nextSibling.style.display = "block";
+                }}
+              />
+              <span className="text-gray-600 text-sm font-medium text-center hidden">
+                {logo.name}
+              </span>
+            </div>
+          ))}
+
+          {/* New text-only logos */}
+          {newClientLogos.map((logo, index) => (
+            <div
+              key={`text-${index}`}
+              className="rounded-lg p-6 flex items-center justify-center h-28 hover:bg-gray-200 bg-[#F2F2F2] transition-colors duration-300"
+            >
+              <span className={`text-center ${logo.textStyle}`}>
+                {logo.name}
+              </span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

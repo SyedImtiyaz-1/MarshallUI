@@ -24,8 +24,8 @@ export const routes = [
   {
     exact: true,
     isPublic: true,
-    path: "/studio",
-    name: "Studio",
+    path: "/about",
+    name: "About",
     element: <Studio />,
   },
   {
