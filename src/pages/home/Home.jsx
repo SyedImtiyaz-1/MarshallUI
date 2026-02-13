@@ -570,7 +570,7 @@ const Home = () => {
 
                 {/* Two text columns - right side */}
                 <div className="flex flex-col sm:flex-row gap-6 sm:gap-12 max-w-xl">
-                  <div className="w-1/2">
+                  <div className="w-full sm:w-1/2">
                     <AnimatedContent
                       distance={150}
                       direction="horizontal"
@@ -599,7 +599,7 @@ const Home = () => {
                     </AnimatedContent>
                   </div>
 
-                  <div className="w-1/2">
+                  <div className="w-full sm:w-1/2">
                     <AnimatedContent
                       distance={150}
                       direction="horizontal"
